@@ -22,6 +22,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_descripcion -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_descripcion">
@@ -61,9 +77,43 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Membrana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Membrana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <rdfs:comment>Cumple una funcion dentro de un sistema</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tejido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido"/>
+    </owl:Class>
     
 
 
@@ -75,6 +125,101 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_COLON -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_COLON">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_DIGESTIVO"/>
+        <oncology-ontology:organo_descricion>El colon es la parte más larga del intestino grueso. Su función es absorber agua y sales de los alimentos parcialmente digeridos que llegan del intestino delgado, y formar y almacenar las heces para su posterior eliminación a través del recto.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>colon</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_ESTOMAGO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_ESTOMAGO">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_DIGESTIVO"/>
+        <oncology-ontology:organo_descricion>El estómago es un órgano en forma de saco ubicado en la parte superior del abdomen. Su función principal es descomponer los alimentos mediante la acción de ácidos gástricos y enzimas digestivas para facilitar la absorción de nutrientes en el intestino delgado.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>estomago</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_HIGADO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_HIGADO">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_DIGESTIVO"/>
+        <oncology-ontology:organo_nombre>higado</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_MAMA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_MAMA">
+        <oncology-ontology:organo_descricion>Las mamas, o senos, son glándulas situadas en la parte superior del pecho. Su función principal es la producción de leche materna en las mujeres, pero también contienen tejido graso y tejido conectivo. Están formadas por lóbulos, lobulillos y conductos.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>mama</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_OVARIOS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_OVARIOS">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_REPRODUCTOR"/>
+        <oncology-ontology:organo_descricion>Los ovarios son dos glándulas reproductoras femeninas, situadas a ambos lados del útero en la pelvis. Producen óvulos para la fertilización y también liberan hormonas como el estrógeno y la progesterona, que regulan el ciclo menstrual y el embarazo.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>ovarios</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_PIEL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_PIEL">
+        <oncology-ontology:organo_nombre>piel</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_PROSTATA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_PROSTATA">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_REPRODUCTOR"/>
+        <oncology-ontology:organo_descricion>La próstata es una glándula pequeña en los hombres, situada debajo de la vejiga y delante del recto. Su función principal es producir líquido prostático, que es parte del semen, y desempeña un papel en la fertilidad al ayudar en el transporte y la nutrición de los espermatozoides.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>prostata</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_RIÑONES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_RIÑONES">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_CIRCULATORIO"/>
+        <oncology-ontology:organo_descricion>Los riñones son dos órganos en forma de frijol situados a ambos lados de la columna vertebral, en la parte posterior del abdomen. Su función principal es filtrar la sangre para eliminar desechos y exceso de líquidos, que luego se excretan como orina. También regulan el equilibrio de electrolitos y la presión arterial.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>riñones</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_UTERO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO_UTERO">
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_REPRODUCTOR"/>
+        <oncology-ontology:organo_descricion>El útero es un órgano muscular hueco en forma de pera, ubicado en la pelvis femenina. Es el lugar donde se desarrolla el feto durante el embarazo. Su revestimiento, el endometrio, se desprende durante la menstruación si no hay embarazo.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>utero</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO__PANCREAS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ORGANO__PANCREAS">
+        <oncology-ontology:organo_descricion>El páncreas es una glándula situada detrás del estómago, que cumple dos funciones principales: la producción de enzimas que ayudan en la digestión de los alimentos y la producción de hormonas, como la insulina, que regula los niveles de azúcar en la sangre.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>pancreas</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
     
 
 
@@ -198,5 +343,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

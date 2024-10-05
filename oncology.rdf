@@ -14,11 +14,132 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#afectaOrgano -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#afectaOrgano">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#detecta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#detecta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#pertenece -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#pertenece">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#puedeTenerCancer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#puedeTenerCancer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Data properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_mortalidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_mortalidad">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_recuperacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_recuperacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -51,6 +172,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sintoma -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sintoma">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -66,6 +207,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     
 
@@ -102,6 +251,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Membrana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Membrana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>Cumple una funcion dentro de un sistema</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica">
@@ -117,6 +284,7 @@
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     
 
@@ -125,6 +293,30 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tejido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido"/>
     </owl:Class>
     
 
@@ -140,10 +332,254 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_10"/>
+        <oncology-ontology:cancer_nombre>Cancer de cervix</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>Infección por virus del papiloma humano (VPH)</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>antecedentes de cáncer cervical en la familia</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>inmunosupresión</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>tabaquismo</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio 0: Carcinoma in situ.
+Estadio I: Cáncer limitado al cuello uterino.
+Estadio II: Cáncer que se ha diseminado a la parte superior de la vagina o los tejidos alrededor del útero.
+Estadio III: Cáncer que se ha diseminado a la parte inferior de la vagina o las paredes pélvicas.
+Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>En estadios III y IV, la mortalidad puede ser del 30-50%.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>En estadios tempranas (I y II), la tasa de recuperación puede ser del 80-90%. En etapas avanzadas, puede caer por debajo del 50%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>Sangrado vaginal anormal</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dolor durante las relaciones sexuales</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dolor pélvico</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>secreción vaginal inusual</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02">
+        <oncology-ontology:cancer_nombre>Cancer de colon</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>Edad avanzada</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>antecedentes familiares</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>dieta baja en fibra y alta en grasas</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>enfermedades inflamatorias del intestino</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio 0: Carcinoma in situ.
+Estadio I: Tumor en la pared del colon, sin afectación de ganglios linfáticos.
+Estadio II: Tumor más profundo, posiblemente afectando la pared del colon, pero sin afectación de ganglios linfáticos.
+Estadio III: Diseminación a ganglios linfáticos cercanos.
+Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>En estadios III y IV, la tasa de mortalidad puede ser del 30-50%.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>En estadios tempranos (I y II), puede ser del 90%. En estadios avanzados, puede disminuir a 20-30%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>Cambios en los hábitos intestinales</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dolor abdominal persistente</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>pérdida de peso inexplicada</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>sangrado rectal</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_05"/>
+        <oncology-ontology:cancer_nombre>Cancer de mama</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>Bulto en el seno</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>cambios en la forma o tamaño del seno</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>piel de naranja en el seno</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>secreción del pezón</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio 0: Carcinoma in situ (no invasivo).
+Estadio I: Tumor pequeño (≤ 2 cm), sin ganglios linfáticos afectados.
+Estadio II: Tumor más grande (2-5 cm) o ganglios linfáticos afectados.
+Estadio III: Tumor de mayor tamaño y múltiples ganglios linfáticos afectados.
+Estadio IV: Cáncer metastásico (se ha diseminado a otros órganos).</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>En etapas avanzadas (III y IV), la tasa de mortalidad puede ser del 20-30%.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>En estadios tempranas (I y II), la probabilidad de recuperación es superior al 90%. En etapas avanzadas, puede disminuir considerablemente.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>Historia familiar de cáncer de mama</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>consumo de alcohol</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>exposición a radiación</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>mutaciones genéticas (BRCA1, BRCA2)</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>obesidad</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:cancer_nombre>Cancer de prostata</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>Edad avanzada</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>dieta alta en grasas</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>historia familiar</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>raza (más común en hombres afroamericanos)</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio I: Tumor pequeño, no se siente durante un examen rectal.
+Estadio II: Tumor más grande, aún confinado a la próstata.
+Estadio III: Cáncer que se ha diseminado fuera de la próstata pero no a otros órganos.
+Estadio IV: Cáncer que se ha diseminado a otros órganos, como huesos o ganglios linfáticos.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>En estadios III y IV, la mortalidad puede ser del 10-30%.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>Alta en estadios tempranos (I y II), con tasas de recuperación del 95% o más. En estadios avanzados, puede bajar a alrededor del 30-40%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>Dificultad para orinar</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dolor en la pelvis o en la espalda baja</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>flujo de orina débil</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>sangre en la orina</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_11"/>
+        <oncology-ontology:cancer_nombre>Cancer de pulmon</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>antecedentes familiares de cáncer</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>exposición a asbestos</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>exposición a humo de segunda mano</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>tabaquismo</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio I: Tumor pequeño, confinado a los pulmones.
+Estadio II: Tumor más grande o diseminación a ganglios linfáticos cercanos.
+Estadio III: Diseminación a ganglios linfáticos en el tórax o estructuras cercanas.
+Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>Altamente mortal; en estadios avanzados, la tasa de mortalidad puede ser superior al 80%.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>En estadios tempranos (I y II), puede ser del 50-70%, pero en estadios avanzados, puede bajar a menos del 5%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>Tos persistente</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dificultad para respirar</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dolor en el pecho</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>hemoptisis (tos con sangre)</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>pérdida de peso inexplicada</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:organo_descricion>El páncreas es una glándula situada detrás del estómago, que cumple dos funciones principales: la producción de enzimas que ayudan en la digestión de los alimentos y la producción de hormonas, como la insulina, que regula los niveles de azúcar en la sangre.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Pancreas</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:organo_descricion>El colon es la parte más larga del intestino grueso. Su función es absorber agua y sales de los alimentos parcialmente digeridos que llegan del intestino delgado, y formar y almacenar las heces para su posterior eliminación a través del recto.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Colon</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:organo_descricion>El estómago es un órgano en forma de saco ubicado en la parte superior del abdomen. Su función principal es descomponer los alimentos mediante la acción de ácidos gástricos y enzimas digestivas para facilitar la absorción de nutrientes en el intestino delgado.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Estomago</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:organo_descricion>órgano vital que filtra la sangre, procesa nutrientes y desintoxica sustancias. Produce bilis y almacena vitaminas, siendo clave en el metabolismo de carbohidratos, grasas y proteínas.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Higado</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:organo_descricion>Las mamas, o senos, son glándulas situadas en la parte superior del pecho. Su función principal es la producción de leche materna en las mujeres, pero también contienen tejido graso y tejido conectivo. Están formadas por lóbulos, lobulillos y conductos.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Mama</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:organo_descricion>Los ovarios son dos glándulas reproductoras femeninas, situadas a ambos lados del útero en la pelvis. Producen óvulos para la fertilización y también liberan hormonas como el estrógeno y la progesterona, que regulan el ciclo menstrual y el embarazo.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Ovarios</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_04"/>
+        <oncology-ontology:organo_descricion>órgano más grande del cuerpo, que actúa como barrera protectora. Regula la temperatura, permite la sensación y ayuda en la producción de vitamina D. Además, protege contra infecciones y deshidratación.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Piel</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_08 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:organo_descricion>La próstata es una glándula pequeña en los hombres, situada debajo de la vejiga y delante del recto. Su función principal es producir líquido prostático, que es parte del semen, y desempeña un papel en la fertilidad al ayudar en el transporte y la nutrición de los espermatozoides.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Prostata</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_09 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_09">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_05"/>
+        <oncology-ontology:organo_descricion>Los riñones son dos órganos en forma de frijol situados a ambos lados de la columna vertebral, en la parte posterior del abdomen. Su función principal es filtrar la sangre para eliminar desechos y exceso de líquidos, que luego se excretan como orina. También regulan el equilibrio de electrolitos y la presión arterial.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Riñones</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:organo_descricion>El útero es un órgano muscular hueco en forma de pera, ubicado en la pelvis femenina. Es el lugar donde se desarrolla el feto durante el embarazo. Su revestimiento, el endometrio, se desprende durante la menstruación si no hay embarazo.</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Utero</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_06"/>
+        <oncology-ontology:organo_descricion>Los pulmones son órganos esponjosos ubicados en el tórax, responsables del intercambio de gases</oncology-ontology:organo_descricion>
+        <oncology-ontology:organo_nombre>Pulmon</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento que utiliza rayos X para crear imagenes internas de cuerpo, permitiendo visualizar el estado interno del mismo.</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Radiografia</oncology-ontology:prueba_diagnostica_nombre>
@@ -155,6 +591,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Tecnica de imagen que utiliza rayos X y un computador para crear imagenes transversales detalladas del cuerpo.</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Tomografia computarizada</oncology-ontology:prueba_diagnostica_nombre>
@@ -199,6 +636,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Extirpacion de una porcion de tejido o lesion completa para su analisis, se realiza bajo anestesia local o general</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Biopsia quirurgica</oncology-ontology:prueba_diagnostica_nombre>
@@ -221,6 +659,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema circulatorio</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Analisis de sangre que evalua los componentes presentes en la sangre, incluyendo globulos rojos, blancos y plaquetas.</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Hemograma completo</oncology-ontology:prueba_diagnostica_nombre>
@@ -272,6 +711,60 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <oncology-ontology:sistema_nombre>Sistema CIrculatorio</oncology-ontology:sistema_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <oncology-ontology:sistema_nombre>Sistema Digestivo</oncology-ontology:sistema_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <oncology-ontology:sistema_nombre>Sistema reproductor</oncology-ontology:sistema_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <oncology-ontology:sistema_nombre>Sistema tegumentario</oncology-ontology:sistema_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <oncology-ontology:sistema_nombre>Sistema urinario</oncology-ontology:sistema_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <oncology-ontology:sistema_nombre>Sistema respiratorio</oncology-ontology:sistema_nombre>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -289,6 +782,15 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

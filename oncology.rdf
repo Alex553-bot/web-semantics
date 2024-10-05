@@ -22,29 +22,30 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_descripcion -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_area_de_evaluacion -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_descripcion">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_area_de_evaluacion">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_funcion_especifica -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_funcion_especifica">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_nombre -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_nombre">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -61,9 +62,70 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
     
 
 
@@ -78,102 +140,134 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_CIRCULATORIO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_CIRCULATORIO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>red compleja de vasos sanguíneos que transportan sangre por todo el cuerpo</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Eliminacion de desechos</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_funcion_especifica>transporte de oxigeno y nutrientes</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema Circulatorio</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento que utiliza rayos X para crear imagenes internas de cuerpo, permitiendo visualizar el estado interno del mismo.</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Radiografia</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_DIGESTIVO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_DIGESTIVO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Conjunto de órganos que trabajan juntos para procesar los alimentos y líquidos consumidos por el ser humano.</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Absorcion de nutrientes</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema digestivo</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Tecnica de imagen que utiliza rayos X y un computador para crear imagenes transversales detalladas del cuerpo.</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Tomografia computarizada</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_ENDOCRINO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_ENDOCRINO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Conjunto de glándulas que producen hormonas</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Regular el crecimiento y desarrollo</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema endocrino</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Tecnica de imagen que usa campos magneticos y ondas de radio para generar imagenes del cuerpo</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Resonancia magnetica</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_NERVIOSO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_NERVIOSO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Red compleja de células especializadas llamadas neuronas que transmiten señales eléctricas y químicas</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Controlar y coordinar los movimientos voluntarios e involuntarios</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema nervioso</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>musculos, organos</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Utilizo de ondas sonoras de alta frecuencia para crear imagenes en tiempo real</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Ultrasonido</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_OSTEOMUSCULAR -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_OSTEOMUSCULAR">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Conjunto de huesos y musculos que permite el movimiento</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>proporciona soporte estructural</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema osteomuscular</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>organos, ganglios</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento para extraer muestras de tejido de una masa o lesion</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Biopsia por aguja</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_REPRODUCTOR -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_REPRODUCTOR">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Conjunto de órganos que permiten la reproducción</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Produccion de hormonas sexuales</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema reproductor</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Extirpacion de una porcion de tejido o lesion completa para su analisis, se realiza bajo anestesia local o general</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Biopsia quirurgica</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_RESPIRATORIO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_RESPIRATORIO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Conjunto de órganos que permiten el intercambio de gases entre nuestro cuerpo y el ambiente</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Filtracion del aire</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema respiratorio</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema cardiovascular</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Sustancias y/o proteinas en la sangre que indican la presencia de cancer, utilizada para monitorio y deteccion.</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Marcadores tumorales</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_TEGUMENTARIO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_TEGUMENTARIO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Organo mas grande del cuerpo humano, actua como barrera protectora</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Regulacion de la temperatura</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema tegumentario</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema circulatorio</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Analisis de sangre que evalua los componentes presentes en la sangre, incluyendo globulos rojos, blancos y plaquetas.</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Hemograma completo</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_URINARIO -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#SISTEMA_URINARIO">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_descripcion>Conjunto de órganos que se encargan de filtrar la sangre, producir orina y eliminar los desechos del cuerpo</oncology-ontology:sistema_descripcion>
-        <oncology-ontology:sistema_funcion_especifica>Regulacion de presion arterial</oncology-ontology:sistema_funcion_especifica>
-        <oncology-ontology:sistema_nombre>Sistema urinario</oncology-ontology:sistema_nombre>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema digestivo</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_nombre>Gastroscopia</oncology-ontology:prueba_diagnostica_nombre>
+        <oncology-ontology:prueba_diagnostica_nombre>Procedimiento endoscopico que permite visualizar el interior del esofago, estomago y duodeno.</oncology-ontology:prueba_diagnostica_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema digestivo</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento endoscopico que permite visualizar el interior del colon y recto utilizando un tubo flexible con una camara</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Colonoscopia</oncology-ontology:prueba_diagnostica_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>fluidos, teijdos</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Examen del material genetico (ADN) para identificar variaciones o mutaciones asociados con enfermedades hereditarias</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Analisis genetico</oncology-ontology:prueba_diagnostica_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico"/>
+        <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
+        <oncology-ontology:prueba_diagnostica_descripcion>Evaluacion fisica realizada por un profesional de la salud para valorar el estado general de un paciente</oncology-ontology:prueba_diagnostica_descripcion>
+        <oncology-ontology:prueba_diagnostica_nombre>Examen clinico</oncology-ontology:prueba_diagnostica_nombre>
     </owl:NamedIndividual>
     
 
@@ -187,11 +281,14 @@
      -->
 
     <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_descripcion"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_funcion_especifica"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

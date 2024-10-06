@@ -1715,6 +1715,56 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:descripcion_tratamiento_medico>La cirugía es un tratamiento común para muchos tipos de cáncer. Durante la operación, el cirujano extrae una masa de células cancerígenas (tumor) y algo de los tejidos circundantes</oncology-ontology:descripcion_tratamiento_medico>
+        <oncology-ontology:funcion_tratamiento_medico>La cirugía se lleva a cabo para aliviar los efectos secundarios causados por un tumor</oncology-ontology:funcion_tratamiento_medico>
+        <oncology-ontology:nombre_tratamiento_medico>Cirugía</oncology-ontology:nombre_tratamiento_medico>
+        <oncology-ontology:tipo_tratamiento_medico>Cirugía</oncology-ontology:tipo_tratamiento_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:descripcion_tratamiento_medico>La cirugía curativa o primaria se hace cuando el cáncer se encuentra únicamente en una parte del cuerpo, y es probable que se pueda extirpar por completo</oncology-ontology:descripcion_tratamiento_medico>
+        <oncology-ontology:funcion_tratamiento_medico>El propósito de la cirugía es extirpar el cáncer por completo</oncology-ontology:funcion_tratamiento_medico>
+        <oncology-ontology:nombre_tratamiento_medico>Cirugía curativa</oncology-ontology:nombre_tratamiento_medico>
+        <oncology-ontology:tipo_tratamiento_medico>Cirugía</oncology-ontology:tipo_tratamiento_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:descripcion_tratamiento_medico>Este tipo de cirugía se realiza para tratar las complicaciones causadas por el cáncer avanzado</oncology-ontology:descripcion_tratamiento_medico>
+        <oncology-ontology:funcion_tratamiento_medico>La cirugía paliativa se puede usar con otros tratamientos para corregir un problema que esté causando incomodidad o incapacidad</oncology-ontology:funcion_tratamiento_medico>
+        <oncology-ontology:funcion_tratamiento_medico>La cirugía paliativa también podría usarse para tratar el dolor cuando es difícil controlarlo con medicamentos. Esta operación ayuda a aliviar problemas causados por el cáncer y ayuda a las personas a sentirse mejor, pero debido a que por lo general el cáncer está en una etapa avanzada, no se usa para tratar o curar el cáncer en sí</oncology-ontology:funcion_tratamiento_medico>
+        <oncology-ontology:nombre_tratamiento_medico>Cirugía paliativa</oncology-ontology:nombre_tratamiento_medico>
+        <oncology-ontology:tipo_tratamiento_medico>Cirugía</oncology-ontology:tipo_tratamiento_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:descripcion_tratamiento_medico>Se conoce como quimioterapia, de forma genérica, a todos los fármacos que se utilizan clásicamente para el tratamiento del cáncer y que van a interferir en los mecanismos de división de la célula tumoral impidiendo o retrasando el crecimiento del tumor. Estos medicamentos pueden administrarse por vía intravenosa o por vía oral.</oncology-ontology:descripcion_tratamiento_medico>
+        <oncology-ontology:efecto_secundario_tratamiento_medico>Algunos medicamentos de quimioterapia pueden dañar las células del corazón, los riñones, la vejiga, los pulmones y el sistema nervioso</oncology-ontology:efecto_secundario_tratamiento_medico>
+        <oncology-ontology:efecto_secundario_tratamiento_medico>La causa de los efectos secundarios es el daño ocasionado a las células sanas</oncology-ontology:efecto_secundario_tratamiento_medico>
+        <oncology-ontology:nombre_tratamiento_medico>Quimioterapia</oncology-ontology:nombre_tratamiento_medico>
+        <oncology-ontology:tipo_tratamiento_medico>Terapia</oncology-ontology:tipo_tratamiento_medico>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //

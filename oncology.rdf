@@ -682,7 +682,9 @@
 
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
     
 
 

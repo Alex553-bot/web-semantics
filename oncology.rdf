@@ -102,15 +102,6 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#advertencia_abandono_tratamiento_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -126,21 +117,21 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_tratamiento_medico -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_tratamiento_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -151,16 +142,6 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#desventaja_tratamiento_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
-
-    
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -183,16 +164,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -201,16 +172,6 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#efecto_remedio_herbal">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -223,16 +184,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_mortalidad -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_mortalidad">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -241,16 +192,6 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#fabricante_medicamento">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_recuperacion -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_recuperacion">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -263,14 +204,24 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
+    
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo -->
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_area_de_evaluacion -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_area_de_evaluacion">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -283,16 +234,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Alternativa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -303,16 +244,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_nombre -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_nombre">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -321,16 +252,6 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#funcion_tratamiento_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sintoma -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sintoma">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -396,6 +317,46 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_mortalidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_mortalidad">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_recuperacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_de_recuperacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_supervivencia_tratamiento_medico -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#probabilidad_supervivencia_tratamiento_medico">
@@ -416,11 +377,61 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_area_de_evaluacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_area_de_evaluacion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#riesgo_tratamiento_medico -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#riesgo_tratamiento_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sintoma -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sintoma">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -463,16 +474,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#sistema_nombre">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -493,14 +494,6 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional"/>
     </owl:Class>
-
-
-    
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
-    </owl:Class>
     
 
 
@@ -510,14 +503,6 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
     </owl:Class>
-
-
-    
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
     
 
 
@@ -526,12 +511,52 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento"/>
     </owl:Class>
-
-
     
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
     </owl:Class>
     
@@ -542,14 +567,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
     </owl:Class>
-
-
-    
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
-    </owl:Class>
     
 
 
@@ -557,14 +574,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Alternativa">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario"/>
-    </owl:Class>
-
-
-    
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
     </owl:Class>
     
 
@@ -574,25 +583,9 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Tradicional">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario"/>
     </owl:Class>
-
-
-    
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
-    </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Tradicional"/>
-    </owl:Class>
-
-
-    
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Membrana -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Membrana">
@@ -602,14 +595,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario"/>
-    </owl:Class>
-
-
-    
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo">
@@ -619,14 +604,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
-    </owl:Class>
-
-
-    
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica">
@@ -647,20 +624,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
-    </owl:Class>
-
-
-    
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica">
@@ -669,18 +632,34 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Tradicional"/>
     </owl:Class>
-
-
     
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
     </owl:Class>
     
 
@@ -697,6 +676,28 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tipo_Tejido">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tejido"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
     </owl:Class>
     
 
@@ -1307,14 +1308,6 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
@@ -1326,18 +1319,26 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Alternativa"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Tradicional"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Complementario"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Alternativa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicina_Tradicional"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

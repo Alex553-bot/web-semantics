@@ -55,12 +55,32 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#puedeHacerceUna -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#puedeHacerceUna">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#puedeTenerCancer -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#puedeTenerCancer">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#tienenUn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#tienenUn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
     </owl:ObjectProperty>
     
 
@@ -85,6 +105,36 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#celulas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#celulas">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#desechos_metabolicos -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#desechos_metabolicos">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#edad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#edad">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#factores_de_riesgo">
@@ -100,6 +150,56 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#fases_del_cancer">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#fibras -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#fibras">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ganglios -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ganglios">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#genero -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#genero">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#glandulas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#glandulas">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#nombre_persona -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#nombre_persona">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -265,6 +365,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment>Cumple una funcion dentro de un sistema</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     
 
@@ -459,6 +567,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:glandulas>endocrinas</oncology-ontology:glandulas>
         <oncology-ontology:organo_descricion>El páncreas es una glándula situada detrás del estómago, que cumple dos funciones principales: la producción de enzimas que ayudan en la digestión de los alimentos y la producción de hormonas, como la insulina, que regula los niveles de azúcar en la sangre.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Pancreas</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -470,6 +579,11 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_02">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:fibras>insolubles</oncology-ontology:fibras>
+        <oncology-ontology:fibras>musculares</oncology-ontology:fibras>
+        <oncology-ontology:fibras>solubles</oncology-ontology:fibras>
+        <oncology-ontology:ganglios>linfatico interno</oncology-ontology:ganglios>
+        <oncology-ontology:glandulas>exocrinas</oncology-ontology:glandulas>
         <oncology-ontology:organo_descricion>El colon es la parte más larga del intestino grueso. Su función es absorber agua y sales de los alimentos parcialmente digeridos que llegan del intestino delgado, y formar y almacenar las heces para su posterior eliminación a través del recto.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Colon</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -481,6 +595,9 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_03">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:fibras>musculares</oncology-ontology:fibras>
+        <oncology-ontology:ganglios>linfatico interno</oncology-ontology:ganglios>
+        <oncology-ontology:glandulas>exocrinas</oncology-ontology:glandulas>
         <oncology-ontology:organo_descricion>El estómago es un órgano en forma de saco ubicado en la parte superior del abdomen. Su función principal es descomponer los alimentos mediante la acción de ácidos gástricos y enzimas digestivas para facilitar la absorción de nutrientes en el intestino delgado.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Estomago</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -492,6 +609,11 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_04">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:celulas>adipositos</oncology-ontology:celulas>
+        <oncology-ontology:desechos_metabolicos>Acido urico</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>amoniaco</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>urea</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:ganglios>linfatico interno</oncology-ontology:ganglios>
         <oncology-ontology:organo_descricion>órgano vital que filtra la sangre, procesa nutrientes y desintoxica sustancias. Produce bilis y almacena vitaminas, siendo clave en el metabolismo de carbohidratos, grasas y proteínas.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Higado</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -503,6 +625,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:glandulas>exocrinas</oncology-ontology:glandulas>
         <oncology-ontology:organo_descricion>Las mamas, o senos, son glándulas situadas en la parte superior del pecho. Su función principal es la producción de leche materna en las mujeres, pero también contienen tejido graso y tejido conectivo. Están formadas por lóbulos, lobulillos y conductos.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Mama</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -514,6 +637,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_06">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:glandulas>endocrinas</oncology-ontology:glandulas>
         <oncology-ontology:organo_descricion>Los ovarios son dos glándulas reproductoras femeninas, situadas a ambos lados del útero en la pelvis. Producen óvulos para la fertilización y también liberan hormonas como el estrógeno y la progesterona, que regulan el ciclo menstrual y el embarazo.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Ovarios</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -525,6 +649,12 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_07">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_04"/>
+        <oncology-ontology:celulas>cutaneas</oncology-ontology:celulas>
+        <oncology-ontology:celulas>queratinocitos</oncology-ontology:celulas>
+        <oncology-ontology:desechos_metabolicos>agua</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>sales</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:ganglios>linfaticos perifericos</oncology-ontology:ganglios>
+        <oncology-ontology:glandulas>exocrinas</oncology-ontology:glandulas>
         <oncology-ontology:organo_descricion>órgano más grande del cuerpo, que actúa como barrera protectora. Regula la temperatura, permite la sensación y ayuda en la producción de vitamina D. Además, protege contra infecciones y deshidratación.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Piel</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -536,6 +666,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_08">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:ganglios>linfaticos internos</oncology-ontology:ganglios>
         <oncology-ontology:organo_descricion>La próstata es una glándula pequeña en los hombres, situada debajo de la vejiga y delante del recto. Su función principal es producir líquido prostático, que es parte del semen, y desempeña un papel en la fertilidad al ayudar en el transporte y la nutrición de los espermatozoides.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Prostata</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -547,8 +678,15 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_09">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_05"/>
+        <oncology-ontology:celulas>adipositos</oncology-ontology:celulas>
+        <oncology-ontology:desechos_metabolicos>acido urico</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>agua</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>creatina</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>sales</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>urea</oncology-ontology:desechos_metabolicos>
         <oncology-ontology:organo_descricion>Los riñones son dos órganos en forma de frijol situados a ambos lados de la columna vertebral, en la parte posterior del abdomen. Su función principal es filtrar la sangre para eliminar desechos y exceso de líquidos, que luego se excretan como orina. También regulan el equilibrio de electrolitos y la presión arterial.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Riñones</oncology-ontology:organo_nombre>
+        <oncology-ontology:organo_nombre>suprarrenales</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
     
 
@@ -558,6 +696,8 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_10">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:fibras>musculares</oncology-ontology:fibras>
+        <oncology-ontology:ganglios>linfaticos internos</oncology-ontology:ganglios>
         <oncology-ontology:organo_descricion>El útero es un órgano muscular hueco en forma de pera, ubicado en la pelvis femenina. Es el lugar donde se desarrolla el feto durante el embarazo. Su revestimiento, el endometrio, se desprende durante la menstruación si no hay embarazo.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Utero</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -569,8 +709,103 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_11">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_06"/>
+        <oncology-ontology:desechos_metabolicos>agua</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:desechos_metabolicos>dioxido de carbono</oncology-ontology:desechos_metabolicos>
+        <oncology-ontology:fibras>musculares</oncology-ontology:fibras>
+        <oncology-ontology:ganglios>mediastinicos</oncology-ontology:ganglios>
         <oncology-ontology:organo_descricion>Los pulmones son órganos esponjosos ubicados en el tórax, responsables del intercambio de gases</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Pulmon</oncology-ontology:organo_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:puedeTenerCancer rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</oncology-ontology:edad>
+        <oncology-ontology:genero>Masculino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona>Juan</oncology-ontology:nombre_persona>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08"/>
+        <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</oncology-ontology:edad>
+        <oncology-ontology:genero>Femenino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona>Guadalupe</oncology-ontology:nombre_persona>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</oncology-ontology:edad>
+        <oncology-ontology:genero>Masculino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona>Maximiliano</oncology-ontology:nombre_persona>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:genero>Masculino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</oncology-ontology:nombre_persona>
+        <oncology-ontology:nombre_persona>Diego</oncology-ontology:nombre_persona>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</oncology-ontology:edad>
+        <oncology-ontology:edad>Ana María</oncology-ontology:edad>
+        <oncology-ontology:genero>Femenino</oncology-ontology:genero>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08"/>
+        <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</oncology-ontology:edad>
+        <oncology-ontology:genero>Femenino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona>Valeria</oncology-ontology:nombre_persona>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Persona_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona_7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+        <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</oncology-ontology:edad>
+        <oncology-ontology:genero>Masculino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona>Túpac</oncology-ontology:nombre_persona>
     </owl:NamedIndividual>
     
 
@@ -793,9 +1028,17 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
         </owl:members>
     </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

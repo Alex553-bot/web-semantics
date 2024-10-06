@@ -26,7 +26,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#afectaOrgano">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
     </owl:ObjectProperty>
@@ -37,17 +37,38 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#detecta">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#esDetectadoPor"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#pertenece -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#pertenece">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esDetectadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esDetectadoPor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#perteneceA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#perteneceA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#tieneOrgano"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
@@ -55,12 +76,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#puedeTenerCancer -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#tieneOrgano -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#puedeTenerCancer">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#tieneOrgano">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
     </owl:ObjectProperty>
     
 
@@ -79,6 +100,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#cancer_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -109,6 +131,8 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#organo_descricion">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -156,6 +180,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#prueba_diagnostica_descripcion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -360,10 +385,12 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_02"/>
         <oncology-ontology:cancer_nombre>Cancer de colon</oncology-ontology:cancer_nombre>
-        <oncology-ontology:factores_de_riesgo>Edad avanzada</oncology-ontology:factores_de_riesgo>
         <oncology-ontology:factores_de_riesgo>antecedentes familiares</oncology-ontology:factores_de_riesgo>
         <oncology-ontology:factores_de_riesgo>dieta baja en fibra y alta en grasas</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>edad avanzada</oncology-ontology:factores_de_riesgo>
         <oncology-ontology:factores_de_riesgo>enfermedades inflamatorias del intestino</oncology-ontology:factores_de_riesgo>
         <oncology-ontology:fases_del_cancer>Estadio 0: Carcinoma in situ.
 Estadio I: Tumor en la pared del colon, sin afectación de ganglios linfáticos.
@@ -410,6 +437,7 @@ Estadio IV: Cáncer metastásico (se ha diseminado a otros órganos).</oncology-
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_08"/>
         <oncology-ontology:cancer_nombre>Cancer de prostata</oncology-ontology:cancer_nombre>
         <oncology-ontology:factores_de_riesgo>Edad avanzada</oncology-ontology:factores_de_riesgo>
         <oncology-ontology:factores_de_riesgo>dieta alta en grasas</oncology-ontology:factores_de_riesgo>
@@ -454,11 +482,133 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_01"/>
+        <oncology-ontology:cancer_nombre>Cancer de pancreas</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>antecedentes familiares de cáncer</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>dietas altas en grasas</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>edad avanzada</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>sobrepeso</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>tabaquismo</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio I: El cáncer está confinado al páncreas.
+Estadio II: El cáncer se ha diseminado a tejidos cercanos o ganglios linfáticos.
+Estadio III: El cáncer se ha diseminado a estructuras cercanas y ganglios linfáticos.
+Estadio IV: El cáncer se ha diseminado a otras partes del cuerpo, como el hígado o los pulmones.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>Aproximadamente el 95% de las personas con cáncer de páncreas en este estadio fallecen dentro de 5 años</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>Estadio I: La tasa de supervivencia a 5 años es aproximadamente del 39%.
+Estadio II: La tasa de supervivencia a 5 años es aproximadamente del 20-30%.
+Estadio III: La tasa de supervivencia a 5 años es aproximadamente del 10%.
+Estadio IV: La tasa de supervivencia a 5 años es de alrededor del 3%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>dolor abdominal</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>ictericia</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>náuseas y vómitos</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>pérdida de peso inexplicada</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_03"/>
+        <oncology-ontology:cancer_nombre>Cancer de estomago</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>antecedentes familiares de cáncer</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>edad avanzada</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>enfermedades gástricas crónicas</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>obesidad</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>tabaquismo</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio I: El cáncer está confinado a la mucosa del estómago.
+Estadio II: El cáncer se ha diseminado a las capas más profundas o a los ganglios linfáticos cercanos.
+Estadio III: El cáncer se ha diseminado a estructuras cercanas y ganglios linfáticos.
+Estadio IV: El cáncer se ha diseminado a otros órganos, como el hígado o los pulmones.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>Estadio IV: Aproximadamente el 90% de las personas con cáncer de estómago en este estadio fallecen dentro de 5 años.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>Estadio I: La tasa de supervivencia a 5 años es aproximadamente del 68%.
+Estadio II: La tasa de supervivencia a 5 años es aproximadamente del 33-50%.
+Estadio III: La tasa de supervivencia a 5 años es aproximadamente del 10-20%.
+Estadio IV: La tasa de supervivencia a 5 años es menor del 5%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>acidez estomacal o indigestión persistente</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>dolor abdominal</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>fatiga y debilidad</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>náuseas y vómitos</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>pérdida de peso inexplicada</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_04"/>
+        <oncology-ontology:cancer_nombre>Cancer de higado</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>antecedentes familiares de cáncer</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>cirrosis</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>consumo excesivo de alcohol</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>diabetes</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>infección crónica por hepatitis B o C</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>obesidad</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio I: El cáncer está confinado al hígado y es pequeño.
+Estadio II: El cáncer se ha diseminado a más de un lugar en el hígado o a los ganglios linfáticos cercanos.
+Estadio III: El cáncer se ha diseminado a estructuras cercanas, como vasos sanguíneos o ganglios linfáticos.
+Estadio IV: El cáncer se ha diseminado a otros órganos, como los pulmones o los huesos.</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>Estadio IV: Aproximadamente el 90% de las personas con cáncer de hígado en este estadio fallecen dentro de 5 años.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>Estadio I: La tasa de supervivencia a 5 años es aproximadamente del 31%.
+Estadio II: La tasa de supervivencia a 5 años es de alrededor del 11-20%.
+Estadio III: La tasa de supervivencia a 5 años es de aproximadamente el 6-11%.
+Estadio IV: La tasa de supervivencia a 5 años es menor del 3%.</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>dolor abdominal</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>hinchazón abdominal</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>ictericia</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>náuseas y vómitos</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>pérdida de apetito</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>pérdida de peso inexplicada</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <oncology-ontology:afectaOrgano rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_07"/>
+        <oncology-ontology:cancer_nombre>Cancer de piel</oncology-ontology:cancer_nombre>
+        <oncology-ontology:factores_de_riesgo>antecedentes familiares de cáncer</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>edad avanzada</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>exposición a la radiación ultravioleta (UV)</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>exposición a productos químicos</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>sistema inmunológico comprometido</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:factores_de_riesgo>tipo de piel clara</oncology-ontology:factores_de_riesgo>
+        <oncology-ontology:fases_del_cancer>Estadio I: Tumor localizado y pequeño, sin diseminación.
+Estadio II: Tumor más grande, pero aún localizado.
+Estadio III: El cáncer se ha diseminado a los ganglios linfáticos cercanos.
+Estadio IV: El cáncer se ha diseminado a otras partes del cuerpo (metástasis).</oncology-ontology:fases_del_cancer>
+        <oncology-ontology:probabilidad_de_mortalidad>Melanoma: Aunque es menos común que otros tipos, es el más mortal. La mortalidad aumenta significativamente con el estadio.
+CCB y CCE: Generalmente, tienen tasas de mortalidad muy bajas cuando se tratan a tiempo.</oncology-ontology:probabilidad_de_mortalidad>
+        <oncology-ontology:probabilidad_de_recuperacion>Carcinoma de células basocelulares (CCB): Muy alta tasa de curación, generalmente se considera &quot;no mortal&quot;.
+Carcinoma de células escamosas (CCE): Tasa de supervivencia alta si se detecta temprano; tasa de curación superior al 90%.
+Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
+    Estadio I: ~98%
+    Estadio II: ~70-90%
+    Estadio III: ~40-70%
+    Estadio IV: ~15-20%</oncology-ontology:probabilidad_de_recuperacion>
+        <oncology-ontology:sintoma>bultos o protuberancias</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>lesiones que no sanan</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>lunares o manchas nuevas</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>sangrado o costras</oncology-ontology:sintoma>
+        <oncology-ontology:sintoma>textura irregular</oncology-ontology:sintoma>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Organo_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
         <oncology-ontology:organo_descricion>El páncreas es una glándula situada detrás del estómago, que cumple dos funciones principales: la producción de enzimas que ayudan en la digestión de los alimentos y la producción de hormonas, como la insulina, que regula los niveles de azúcar en la sangre.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Pancreas</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -469,7 +619,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_02">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
         <oncology-ontology:organo_descricion>El colon es la parte más larga del intestino grueso. Su función es absorber agua y sales de los alimentos parcialmente digeridos que llegan del intestino delgado, y formar y almacenar las heces para su posterior eliminación a través del recto.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Colon</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -480,7 +630,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_03">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
         <oncology-ontology:organo_descricion>El estómago es un órgano en forma de saco ubicado en la parte superior del abdomen. Su función principal es descomponer los alimentos mediante la acción de ácidos gástricos y enzimas digestivas para facilitar la absorción de nutrientes en el intestino delgado.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Estomago</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -491,7 +641,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_04">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_02"/>
         <oncology-ontology:organo_descricion>órgano vital que filtra la sangre, procesa nutrientes y desintoxica sustancias. Produce bilis y almacena vitaminas, siendo clave en el metabolismo de carbohidratos, grasas y proteínas.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Higado</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -502,7 +652,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
         <oncology-ontology:organo_descricion>Las mamas, o senos, son glándulas situadas en la parte superior del pecho. Su función principal es la producción de leche materna en las mujeres, pero también contienen tejido graso y tejido conectivo. Están formadas por lóbulos, lobulillos y conductos.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Mama</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -513,7 +663,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_06">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
         <oncology-ontology:organo_descricion>Los ovarios son dos glándulas reproductoras femeninas, situadas a ambos lados del útero en la pelvis. Producen óvulos para la fertilización y también liberan hormonas como el estrógeno y la progesterona, que regulan el ciclo menstrual y el embarazo.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Ovarios</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -524,7 +674,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_07">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_04"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_04"/>
         <oncology-ontology:organo_descricion>órgano más grande del cuerpo, que actúa como barrera protectora. Regula la temperatura, permite la sensación y ayuda en la producción de vitamina D. Además, protege contra infecciones y deshidratación.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Piel</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -535,7 +685,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_08">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
         <oncology-ontology:organo_descricion>La próstata es una glándula pequeña en los hombres, situada debajo de la vejiga y delante del recto. Su función principal es producir líquido prostático, que es parte del semen, y desempeña un papel en la fertilidad al ayudar en el transporte y la nutrición de los espermatozoides.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Prostata</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -546,7 +696,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_09">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_05"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_05"/>
         <oncology-ontology:organo_descricion>Los riñones son dos órganos en forma de frijol situados a ambos lados de la columna vertebral, en la parte posterior del abdomen. Su función principal es filtrar la sangre para eliminar desechos y exceso de líquidos, que luego se excretan como orina. También regulan el equilibrio de electrolitos y la presión arterial.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Riñones</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -557,7 +707,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_10">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_03"/>
         <oncology-ontology:organo_descricion>El útero es un órgano muscular hueco en forma de pera, ubicado en la pelvis femenina. Es el lugar donde se desarrolla el feto durante el embarazo. Su revestimiento, el endometrio, se desprende durante la menstruación si no hay embarazo.</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Utero</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -568,7 +718,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Organo_11">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <oncology-ontology:pertenece rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_06"/>
+        <oncology-ontology:perteneceA rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_06"/>
         <oncology-ontology:organo_descricion>Los pulmones son órganos esponjosos ubicados en el tórax, responsables del intercambio de gases</oncology-ontology:organo_descricion>
         <oncology-ontology:organo_nombre>Pulmon</oncology-ontology:organo_nombre>
     </owl:NamedIndividual>
@@ -580,6 +730,8 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
         <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento que utiliza rayos X para crear imagenes internas de cuerpo, permitiendo visualizar el estado interno del mismo.</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Radiografia</oncology-ontology:prueba_diagnostica_nombre>
@@ -591,7 +743,13 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
         <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Tecnica de imagen que utiliza rayos X y un computador para crear imagenes transversales detalladas del cuerpo.</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Tomografia computarizada</oncology-ontology:prueba_diagnostica_nombre>
@@ -603,6 +761,8 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Tecnica de imagen que usa campos magneticos y ondas de radio para generar imagenes del cuerpo</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Resonancia magnetica</oncology-ontology:prueba_diagnostica_nombre>
@@ -614,6 +774,8 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_imagen"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>musculos, organos</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Utilizo de ondas sonoras de alta frecuencia para crear imagenes en tiempo real</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Ultrasonido</oncology-ontology:prueba_diagnostica_nombre>
@@ -625,6 +787,9 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>organos, ganglios</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento para extraer muestras de tejido de una masa o lesion</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Biopsia por aguja</oncology-ontology:prueba_diagnostica_nombre>
@@ -636,7 +801,11 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Biopsia"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02"/>
         <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Extirpacion de una porcion de tejido o lesion completa para su analisis, se realiza bajo anestesia local o general</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Biopsia quirurgica</oncology-ontology:prueba_diagnostica_nombre>
@@ -648,6 +817,8 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_de_sangre"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema cardiovascular</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Sustancias y/o proteinas en la sangre que indican la presencia de cancer, utilizada para monitorio y deteccion.</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Marcadores tumorales</oncology-ontology:prueba_diagnostica_nombre>
@@ -671,6 +842,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema digestivo</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_nombre>Gastroscopia</oncology-ontology:prueba_diagnostica_nombre>
         <oncology-ontology:prueba_diagnostica_nombre>Procedimiento endoscopico que permite visualizar el interior del esofago, estomago y duodeno.</oncology-ontology:prueba_diagnostica_nombre>
@@ -682,6 +854,8 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Endoscopia"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>sistema digestivo</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Procedimiento endoscopico que permite visualizar el interior del colon y recto utilizando un tubo flexible con una camara</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Colonoscopia</oncology-ontology:prueba_diagnostica_nombre>
@@ -693,6 +867,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_genetica"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>fluidos, teijdos</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Examen del material genetico (ADN) para identificar variaciones o mutaciones asociados con enfermedades hereditarias</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Analisis genetico</oncology-ontology:prueba_diagnostica_nombre>
@@ -704,6 +879,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Examen_fisico"/>
+        <oncology-ontology:detecta rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
         <oncology-ontology:prueba_diagnostica_area_de_evaluacion>cuerpo humano</oncology-ontology:prueba_diagnostica_area_de_evaluacion>
         <oncology-ontology:prueba_diagnostica_descripcion>Evaluacion fisica realizada por un profesional de la salud para valorar el estado general de un paciente</oncology-ontology:prueba_diagnostica_descripcion>
         <oncology-ontology:prueba_diagnostica_nombre>Examen clinico</oncology-ontology:prueba_diagnostica_nombre>
@@ -715,7 +891,7 @@ Estadio IV: Cáncer metastásico.</oncology-ontology:fases_del_cancer>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <oncology-ontology:sistema_nombre>Sistema CIrculatorio</oncology-ontology:sistema_nombre>
+        <oncology-ontology:sistema_nombre>Sistema Circulatorio</oncology-ontology:sistema_nombre>
     </owl:NamedIndividual>
     
 

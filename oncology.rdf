@@ -56,6 +56,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#combate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#combate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#esCombatidoCon"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#detecta -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#detecta">
@@ -67,12 +78,33 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#disponibleEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#disponibleEn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#ofreceTratamiento"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esCombatidoCon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esCombatidoCon">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
     </owl:ObjectProperty>
     
 
@@ -91,6 +123,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ofreceTratamiento">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
     </owl:ObjectProperty>
     
 
@@ -99,7 +133,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#perteneceA">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#tieneOrgano"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
@@ -110,6 +143,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#puedeHacerceUna -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#puedeHacerceUna">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
     </owl:ObjectProperty>
@@ -126,35 +160,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#tieneOrgano -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#tieneOrgano">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#tienenUn -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#tienenUn">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
-    </rdf:Description>
     
 
 
@@ -394,7 +406,23 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#genero">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Femenino</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Masculino</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -1184,6 +1212,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Primer_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
         <oncology-ontology:descripcion_centro_medico>Centro de atención primaria que ofrece servicios médicos generales, pediatría y ginecología. Su enfoque está en la prevención y promoción de la salud en la comunidad.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Centro de Salud Las Lomas</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
@@ -1194,6 +1227,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_02">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Segundo_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
         <oncology-ontology:descripcion_centro_medico>Centro de salud de segundo nivel que ofrece atención especializada en cirugía, medicina interna y pediatría, con servicios de hospitalización.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital Bolívar</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
@@ -1204,6 +1242,17 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_03">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tercer_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12"/>
         <oncology-ontology:descripcion_centro_medico>Hospital de tercer nivel que brinda atención médica especializada en diversas áreas, incluyendo servicios de cirugía y medicina interna.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital de Clínicas Murillo</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
@@ -1214,6 +1263,14 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_04">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tercer_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07"/>
         <oncology-ontology:descripcion_centro_medico>Establecimiento de tercer nivel que ofrece atención integral en especialidades como pediatría, ginecología y emergencias.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital Juan XXIII</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
@@ -1224,6 +1281,19 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cuarto_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12"/>
         <oncology-ontology:descripcion_centro_medico>Hospital de cuarto nivel que proporciona atención médica de alta complejidad y especialidades, incluyendo oncología y cirugía avanzada.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital Universitario Joaquín Fernández</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
@@ -1234,6 +1304,17 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_06">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cuarto_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_08"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10"/>
         <oncology-ontology:descripcion_centro_medico>Centro especializado en el tratamiento del cáncer, ofreciendo servicios de diagnóstico y terapia oncológica.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Instituto Oncológico de Bolivia (IOB)</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
@@ -1453,8 +1534,8 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Persona"/>
         <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
         <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</oncology-ontology:edad>
         <oncology-ontology:genero>Masculino</oncology-ontology:genero>
-        <oncology-ontology:nombre_persona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</oncology-ontology:nombre_persona>
         <oncology-ontology:nombre_persona>Diego</oncology-ontology:nombre_persona>
     </owl:NamedIndividual>
     
@@ -1467,8 +1548,8 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:puedeHacerceUna rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
         <oncology-ontology:tienenUn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
         <oncology-ontology:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</oncology-ontology:edad>
-        <oncology-ontology:edad>Ana María</oncology-ontology:edad>
         <oncology-ontology:genero>Femenino</oncology-ontology:genero>
+        <oncology-ontology:nombre_persona>Ana María</oncology-ontology:nombre_persona>
     </owl:NamedIndividual>
     
 
@@ -1719,6 +1800,14 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
         <oncology-ontology:descripcion_tratamiento_medico>La cirugía es un tratamiento común para muchos tipos de cáncer. Durante la operación, el cirujano extrae una masa de células cancerígenas (tumor) y algo de los tejidos circundantes</oncology-ontology:descripcion_tratamiento_medico>
         <oncology-ontology:funcion_tratamiento_medico>La cirugía se lleva a cabo para aliviar los efectos secundarios causados por un tumor</oncology-ontology:funcion_tratamiento_medico>
         <oncology-ontology:nombre_tratamiento_medico>Cirugía</oncology-ontology:nombre_tratamiento_medico>
@@ -1731,6 +1820,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
         <oncology-ontology:descripcion_tratamiento_medico>La cirugía curativa o primaria se hace cuando el cáncer se encuentra únicamente en una parte del cuerpo, y es probable que se pueda extirpar por completo</oncology-ontology:descripcion_tratamiento_medico>
         <oncology-ontology:funcion_tratamiento_medico>El propósito de la cirugía es extirpar el cáncer por completo</oncology-ontology:funcion_tratamiento_medico>
         <oncology-ontology:nombre_tratamiento_medico>Cirugía curativa</oncology-ontology:nombre_tratamiento_medico>
@@ -1743,6 +1837,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08"/>
         <oncology-ontology:descripcion_tratamiento_medico>Este tipo de cirugía se realiza para tratar las complicaciones causadas por el cáncer avanzado</oncology-ontology:descripcion_tratamiento_medico>
         <oncology-ontology:funcion_tratamiento_medico>La cirugía paliativa se puede usar con otros tratamientos para corregir un problema que esté causando incomodidad o incapacidad</oncology-ontology:funcion_tratamiento_medico>
         <oncology-ontology:funcion_tratamiento_medico>La cirugía paliativa también podría usarse para tratar el dolor cuando es difícil controlarlo con medicamentos. Esta operación ayuda a aliviar problemas causados por el cáncer y ayuda a las personas a sentirse mejor, pero debido a que por lo general el cáncer está en una etapa avanzada, no se usa para tratar o curar el cáncer en sí</oncology-ontology:funcion_tratamiento_medico>
@@ -1756,6 +1855,12 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_08"/>
+        <oncology-ontology:combate rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
         <oncology-ontology:descripcion_tratamiento_medico>Se conoce como quimioterapia, de forma genérica, a todos los fármacos que se utilizan clásicamente para el tratamiento del cáncer y que van a interferir en los mecanismos de división de la célula tumoral impidiendo o retrasando el crecimiento del tumor. Estos medicamentos pueden administrarse por vía intravenosa o por vía oral.</oncology-ontology:descripcion_tratamiento_medico>
         <oncology-ontology:efecto_secundario_tratamiento_medico>Algunos medicamentos de quimioterapia pueden dañar las células del corazón, los riñones, la vejiga, los pulmones y el sistema nervioso</oncology-ontology:efecto_secundario_tratamiento_medico>
         <oncology-ontology:efecto_secundario_tratamiento_medico>La causa de los efectos secundarios es el daño ocasionado a las células sanas</oncology-ontology:efecto_secundario_tratamiento_medico>
@@ -1841,5 +1946,5 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

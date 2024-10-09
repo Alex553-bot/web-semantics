@@ -1262,7 +1262,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_04 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_04">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tercer_nivel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Segundo_nivel"/>
         <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
@@ -1271,7 +1271,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07"/>
-        <oncology-ontology:descripcion_centro_medico>Establecimiento de tercer nivel que ofrece atención integral en especialidades como pediatría, ginecología y emergencias.</oncology-ontology:descripcion_centro_medico>
+        <oncology-ontology:descripcion_centro_medico>Establecimiento de segundo nivel que ofrece atención integral en especialidades como pediatría, ginecología y emergencias.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital Juan XXIII</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
     
@@ -1280,7 +1280,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_05 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_05">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cuarto_nivel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tercer_nivel"/>
         <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
@@ -1294,7 +1294,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11"/>
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12"/>
-        <oncology-ontology:descripcion_centro_medico>Hospital de cuarto nivel que proporciona atención médica de alta complejidad y especialidades, incluyendo oncología y cirugía avanzada.</oncology-ontology:descripcion_centro_medico>
+        <oncology-ontology:descripcion_centro_medico>Hospital de tercer nivel que proporciona atención médica de alta complejidad y especialidades, incluyendo oncología y cirugía avanzada.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital Universitario Joaquín Fernández</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
     
@@ -1317,6 +1317,72 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10"/>
         <oncology-ontology:descripcion_centro_medico>Centro especializado en el tratamiento del cáncer, ofreciendo servicios de diagnóstico y terapia oncológica.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Instituto Oncológico de Bolivia (IOB)</oncology-ontology:nombre_centro_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tercer_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_07"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_11"/>
+        <oncology-ontology:descripcion_centro_medico>Brinda atención en más de 20 especialidades, como cirugía oncológica y neurología.</oncology-ontology:descripcion_centro_medico>
+        <oncology-ontology:nombre_centro_medico>Hospital Japonés</oncology-ontology:nombre_centro_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_08 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tercer_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_02"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_09"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_10"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_12"/>
+        <oncology-ontology:descripcion_centro_medico>Especializado en pediatría avanzada, abarca cardiología, neurología y oncología infantil​.</oncology-ontology:descripcion_centro_medico>
+        <oncology-ontology:nombre_centro_medico>Hospital del Niño</oncology-ontology:nombre_centro_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_09 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_09">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Primer_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_01"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_05"/>
+        <oncology-ontology:descripcion_centro_medico>Ofrece servicios básicos de atención primaria a la comunidad rural cercana​.</oncology-ontology:descripcion_centro_medico>
+        <oncology-ontology:nombre_centro_medico>Centro de Salud Itatiqui</oncology-ontology:nombre_centro_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Segundo_nivel"/>
+        <oncology-ontology:ofreceTratamiento rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_02"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_03"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_04"/>
+        <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
+        <oncology-ontology:descripcion_centro_medico>Brinda atención en medicina interna, cirugía y especialidades básicas. Se enfoca en la atención ambulatoria y hospitalización de mediana complejidad​.</oncology-ontology:descripcion_centro_medico>
+        <oncology-ontology:nombre_centro_medico>Hospital Municipal La Merced</oncology-ontology:nombre_centro_medico>
     </owl:NamedIndividual>
     
 
@@ -1946,5 +2012,5 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
 
 
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

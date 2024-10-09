@@ -961,6 +961,60 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_01">
+        <oncology-ontology:nombre_alimento>Espinaca</oncology-ontology:nombre_alimento>
+        <oncology-ontology:tipo_alimento>Vegetal</oncology-ontology:tipo_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_02">
+        <oncology-ontology:nombre_alimento>Salmon</oncology-ontology:nombre_alimento>
+        <oncology-ontology:tipo_alimento>Pescado</oncology-ontology:tipo_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_03">
+        <oncology-ontology:nombre_alimento>Lentejas</oncology-ontology:nombre_alimento>
+        <oncology-ontology:tipo_alimento>Legumbre</oncology-ontology:tipo_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_01">
+        <oncology-ontology:nombre_alimento>Azúcar refinada</oncology-ontology:nombre_alimento>
+        <oncology-ontology:tipo_alimento>Edulcurante</oncology-ontology:tipo_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_02">
+        <oncology-ontology:nombre_alimento>Carnes procesadas</oncology-ontology:nombre_alimento>
+        <oncology-ontology:tipo_alimento>Carnes</oncology-ontology:tipo_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_03">
+        <oncology-ontology:nombre_alimento>Alcohol</oncology-ontology:nombre_alimento>
+        <oncology-ontology:tipo_alimento>Bebida</oncology-ontology:tipo_alimento>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01">
@@ -1383,6 +1437,36 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:realizaExamen rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica_06"/>
         <oncology-ontology:descripcion_centro_medico>Brinda atención en medicina interna, cirugía y especialidades básicas. Se enfoca en la atención ambulatoria y hospitalización de mediana complejidad​.</oncology-ontology:descripcion_centro_medico>
         <oncology-ontology:nombre_centro_medico>Hospital Municipal La Merced</oncology-ontology:nombre_centro_medico>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_01">
+        <oncology-ontology:fabricante_medicamento>Mylan</oncology-ontology:fabricante_medicamento>
+        <oncology-ontology:nombre_medicamento>Cisplatino</oncology-ontology:nombre_medicamento>
+        <oncology-ontology:tipo_medicamento>Quimioterapia</oncology-ontology:tipo_medicamento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_02">
+        <oncology-ontology:fabricante_medicamento>Hospira</oncology-ontology:fabricante_medicamento>
+        <oncology-ontology:nombre_medicamento>5-fluorouracilo (5-FU)</oncology-ontology:nombre_medicamento>
+        <oncology-ontology:tipo_medicamento>Quimioterapia</oncology-ontology:tipo_medicamento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_03">
+        <oncology-ontology:fabricante_medicamento>Genentech/Roche</oncology-ontology:fabricante_medicamento>
+        <oncology-ontology:nombre_medicamento>Trastuzumab</oncology-ontology:nombre_medicamento>
+        <oncology-ontology:tipo_medicamento>Quimioterapia</oncology-ontology:tipo_medicamento>
     </owl:NamedIndividual>
     
 
@@ -1862,6 +1946,39 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_01">
+        <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</oncology-ontology:caloria_suplemento_nutricional>
+        <oncology-ontology:fabricante_suplemento_nutricional>NutriHealth Corp</oncology-ontology:fabricante_suplemento_nutricional>
+        <oncology-ontology:nombre_suplemento_nutricional>NutriCervix Plus</oncology-ontology:nombre_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</oncology-ontology:proteina_suplemento_nutricional>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_02">
+        <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</oncology-ontology:caloria_suplemento_nutricional>
+        <oncology-ontology:fabricante_suplemento_nutricional>Wellness Foods Inc.</oncology-ontology:fabricante_suplemento_nutricional>
+        <oncology-ontology:nombre_suplemento_nutricional>ColonSupport Shake</oncology-ontology:nombre_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</oncology-ontology:proteina_suplemento_nutricional>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_03">
+        <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</oncology-ontology:caloria_suplemento_nutricional>
+        <oncology-ontology:fabricante_suplemento_nutricional>HealthPlus Nutrition</oncology-ontology:fabricante_suplemento_nutricional>
+        <oncology-ontology:nombre_suplemento_nutricional>BreastCare Protein</oncology-ontology:nombre_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</oncology-ontology:proteina_suplemento_nutricional>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01">
@@ -2012,5 +2129,5 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

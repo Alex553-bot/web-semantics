@@ -45,13 +45,40 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#afectaAUn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#afectaAUn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#afectaOrgano -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#afectaOrgano">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#aliviaSintomasDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#aliviaSintomasDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#ayudaAl -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ayudaAl">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -60,7 +87,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#combate">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#esCombatidoCon"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
     </owl:ObjectProperty>
@@ -71,50 +97,18 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#detecta">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#esDetectadoPor"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#disponibleEn -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#noPuedeConsumirseEn -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#disponibleEn">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#noPuedeConsumirseEn">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#ofreceTratamiento"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esAfectadoPor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esCombatidoCon -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esCombatidoCon">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#esDetectadoPor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#esDetectadoPor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Prueba_diagnostica"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
     </owl:ObjectProperty>
     
 
@@ -133,9 +127,18 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#perteneceA">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Organo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#puedeConsumirseEn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#puedeConsumirseEn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
     </owl:ObjectProperty>
     
 
@@ -191,6 +194,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#alimento_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#alimento_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#beneficio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#beneficio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#caloria_suplemento_nutricional -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#caloria_suplemento_nutricional">
@@ -221,11 +244,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_alimento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_alimento">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_centro_medico -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_centro_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Centro_medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_remedio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#descripcion_remedio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -607,6 +648,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#remedio_nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#remedio_nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#riesgo_tratamiento_medico -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#riesgo_tratamiento_medico">
@@ -672,6 +723,16 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#ventaja_tratamiento_medico">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#vitamina -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#vitamina">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -961,56 +1022,142 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_01 -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_01 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_01">
-        <oncology-ontology:nombre_alimento>Espinaca</oncology-ontology:nombre_alimento>
-        <oncology-ontology:tipo_alimento>Vegetal</oncology-ontology:tipo_alimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Brócoli</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>El brócoli es una hortaliza rica en antioxidantes, fibra y compuestos como el sulforafano, que han demostrado tener propiedades anticancerígenas.</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:vitamina>Vitamina A</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina B6</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina C</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina K</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Ácido fólico</oncology-ontology:vitamina>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_02 -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_02 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_02">
-        <oncology-ontology:nombre_alimento>Salmon</oncology-ontology:nombre_alimento>
-        <oncology-ontology:tipo_alimento>Pescado</oncology-ontology:tipo_alimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Zanahoria</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>La zanahoria es una fuente excelente de betacarotenos, precursores de la vitamina A, y tiene propiedades antioxidantes que pueden ayudar a combatir el cáncer.</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:vitamina>Vitamina A</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina B6</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina B8</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina C</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina K</oncology-ontology:vitamina>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_03 -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_03 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_03">
-        <oncology-ontology:nombre_alimento>Lentejas</oncology-ontology:nombre_alimento>
-        <oncology-ontology:tipo_alimento>Legumbre</oncology-ontology:tipo_alimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Tomate</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>El tomate es rico en licopeno, un antioxidante que ha sido vinculado a la reducción del riesgo de cáncer, especialmente en el cáncer de próstata.</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:vitamina>Vitamina A</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina B6</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina C</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina E</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina K</oncology-ontology:vitamina>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_01 -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_04 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_01">
-        <oncology-ontology:nombre_alimento>Azúcar refinada</oncology-ontology:nombre_alimento>
-        <oncology-ontology:tipo_alimento>Edulcurante</oncology-ontology:tipo_alimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Espinaca</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>La espinaca es rica en hierro y antioxidantes, y ha demostrado ayudar a la prevención del cáncer debido a su contenido en flavonoides y otros compuestos antiinflamatorios.</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:vitamina>Vitamina A</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina C</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina E</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina K</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Ácido fólico</oncology-ontology:vitamina>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_02 -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_05 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_02">
-        <oncology-ontology:nombre_alimento>Carnes procesadas</oncology-ontology:nombre_alimento>
-        <oncology-ontology:tipo_alimento>Carnes</oncology-ontology:tipo_alimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Cúrcuma</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>La cúrcuma contiene curcumina, un compuesto que tiene propiedades antiinflamatorias y ha sido estudiado por su posible efecto en la prevención y tratamiento de diversos tipos de cáncer.</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:vitamina>Vitamina B6</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina C</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina E</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina K</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Ácido fólico</oncology-ontology:vitamina>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_03 -->
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_06 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_03">
-        <oncology-ontology:nombre_alimento>Alcohol</oncology-ontology:nombre_alimento>
-        <oncology-ontology:tipo_alimento>Bebida</oncology-ontology:tipo_alimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
+        <oncology-ontology:noPuedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:descripcion_alimento>Carne roja</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:descripcion_alimento>La carne roja procesada o en exceso puede aumentar el riesgo de inflamación y está asociada a mayores riesgos en pacientes con cáncer de colon.</oncology-ontology:descripcion_alimento>
+        <oncology-ontology:vitamina>Grasas Saturadas</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Hierro</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Proteninas</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Vitamina B12</oncology-ontology:vitamina>
+        <oncology-ontology:vitamina>Zinc</oncology-ontology:vitamina>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
+        <oncology-ontology:noPuedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Alcohol</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>El alcohol en exceso puede debilitar el sistema inmunológico y aumentar el riesgo de recurrencia del cáncer.</oncology-ontology:descripcion_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_08 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_08">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
+        <oncology-ontology:noPuedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Azúcar Refinada</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>El azúcar refinada puede aumentar los niveles de insulina, lo cual puede favorecer el crecimiento de células cancerosas.</oncology-ontology:descripcion_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_09 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_09">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
+        <oncology-ontology:noPuedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Sal</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>El consumo excesivo de sal puede aumentar el riesgo de cáncer gástrico y otros problemas relacionados con la salud digestiva.</oncology-ontology:descripcion_alimento>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
+        <oncology-ontology:noPuedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
+        <oncology-ontology:alimento_nombre>Alimentos Fritos</oncology-ontology:alimento_nombre>
+        <oncology-ontology:descripcion_alimento>Los alimentos fritos pueden contener grasas trans que aumentan el riesgo de inflamación y empeoran la condición de pacientes con cáncer.</oncology-ontology:descripcion_alimento>
     </owl:NamedIndividual>
     
 
@@ -1892,6 +2039,106 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_02"/>
+        <oncology-ontology:beneficio>Alivia el dolor</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Apoya el sistema inmunológico</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Propiedades antioxidantes</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Puede ayudar a reducir el crecimiento tumoral</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Reduce la inflamación</oncology-ontology:beneficio>
+        <oncology-ontology:descripcion_remedio>La cúrcuma contiene curcumina, un compuesto con propiedades antiinflamatorias y antioxidantes que puede ayudar a reducir la inflamación y el dolor en pacientes con cáncer.</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:remedio_nombre>Cúrcuma</oncology-ontology:remedio_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_03"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_07"/>
+        <oncology-ontology:beneficio>Fortalece el sistema inmunológico</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Mejora la digestión</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Propiedades antiinflamatorias</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Reduce el malestar gástrico</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Reduce las náuseas</oncology-ontology:beneficio>
+        <oncology-ontology:descripcion_remedio>El jengibre se utiliza comúnmente para aliviar las náuseas, un síntoma frecuente durante la quimioterapia. También puede tener propiedades antiinflamatorias.</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:remedio_nombre>Jengibre</oncology-ontology:remedio_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_09"/>
+        <oncology-ontology:beneficio>Apoya la salud cardiovascular</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Ayuda a reducir el crecimiento tumoral</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Mejora el metabolismo</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Propiedades antioxidantes</oncology-ontology:beneficio>
+        <oncology-ontology:descripcion_remedio>El té verde es rico en catequinas, antioxidantes que ayudan a reducir la proliferación de células cancerígenas.</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:remedio_nombre>Té Verde</oncology-ontology:remedio_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
+        <oncology-ontology:descripcion_remedio>Ayuda a prevenir el cáncer</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:descripcion_remedio>El ajo contiene compuestos que estimulan el sistema inmunológico, combatiendo el cáncer y reduciendo su recurrencia.</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:descripcion_remedio>Estimula el sistema inmunológico</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:descripcion_remedio>Mejora la circulación</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:descripcion_remedio>Propiedades anticancerígenas</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:descripcion_remedio>Reduce el crecimiento tumoral</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:remedio_nombre>Ajo</oncology-ontology:remedio_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_05">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_04"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_05"/>
+        <oncology-ontology:descripcion_remedio>El ginseng es conocido por mejorar la energía y reducir la fatiga en pacientes oncológicos durante el tratamiento.</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:remedio_nombre>Aumenta la energía</oncology-ontology:remedio_nombre>
+        <oncology-ontology:remedio_nombre>Estimula el sistema inmunológico</oncology-ontology:remedio_nombre>
+        <oncology-ontology:remedio_nombre>Ginseng</oncology-ontology:remedio_nombre>
+        <oncology-ontology:remedio_nombre>Mejora la capacidad física</oncology-ontology:remedio_nombre>
+        <oncology-ontology:remedio_nombre>Reduce el estrés</oncology-ontology:remedio_nombre>
+        <oncology-ontology:remedio_nombre>Reduce la fatiga</oncology-ontology:remedio_nombre>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal_06">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Remedio_Herbal"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_01"/>
+        <oncology-ontology:aliviaSintomasDe rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Cancer_06"/>
+        <oncology-ontology:beneficio>Fortalece el sistema inmunológico</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Mejora la cicatrización</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Previene infecciones</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Propiedades antioxidantes</oncology-ontology:beneficio>
+        <oncology-ontology:beneficio>Reduce la inflamación</oncology-ontology:beneficio>
+        <oncology-ontology:descripcion_remedio>Fortalece el sistema inmunológico, ayudando a los pacientes de cáncer a combatir infecciones durante el tratamiento.</oncology-ontology:descripcion_remedio>
+        <oncology-ontology:remedio_nombre>Equinácea</oncology-ontology:remedio_nombre>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Sistema_01">
@@ -2130,4 +2377,4 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
 
 
 <!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
-
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->

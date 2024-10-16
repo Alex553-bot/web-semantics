@@ -964,6 +964,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
         <oncology-ontology:nombre_alimento>Espinaca</oncology-ontology:nombre_alimento>
         <oncology-ontology:tipo_alimento>Vegetal</oncology-ontology:tipo_alimento>
     </owl:NamedIndividual>
@@ -973,6 +974,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_02 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
         <oncology-ontology:nombre_alimento>Salmon</oncology-ontology:nombre_alimento>
         <oncology-ontology:tipo_alimento>Pescado</oncology-ontology:tipo_alimento>
     </owl:NamedIndividual>
@@ -982,6 +984,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_03 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
         <oncology-ontology:nombre_alimento>Lentejas</oncology-ontology:nombre_alimento>
         <oncology-ontology:tipo_alimento>Legumbre</oncology-ontology:tipo_alimento>
     </owl:NamedIndividual>
@@ -991,6 +994,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
         <oncology-ontology:nombre_alimento>Azúcar refinada</oncology-ontology:nombre_alimento>
         <oncology-ontology:tipo_alimento>Edulcurante</oncology-ontology:tipo_alimento>
     </owl:NamedIndividual>
@@ -1000,6 +1004,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_02 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
         <oncology-ontology:nombre_alimento>Carnes procesadas</oncology-ontology:nombre_alimento>
         <oncology-ontology:tipo_alimento>Carnes</oncology-ontology:tipo_alimento>
     </owl:NamedIndividual>
@@ -1009,6 +1014,7 @@
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_03 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Restringuido"/>
         <oncology-ontology:nombre_alimento>Alcohol</oncology-ontology:nombre_alimento>
         <oncology-ontology:tipo_alimento>Bebida</oncology-ontology:tipo_alimento>
     </owl:NamedIndividual>
@@ -1444,6 +1450,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento"/>
         <oncology-ontology:fabricante_medicamento>Mylan</oncology-ontology:fabricante_medicamento>
         <oncology-ontology:nombre_medicamento>Cisplatino</oncology-ontology:nombre_medicamento>
         <oncology-ontology:tipo_medicamento>Quimioterapia</oncology-ontology:tipo_medicamento>
@@ -1454,6 +1461,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_02 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento"/>
         <oncology-ontology:fabricante_medicamento>Hospira</oncology-ontology:fabricante_medicamento>
         <oncology-ontology:nombre_medicamento>5-fluorouracilo (5-FU)</oncology-ontology:nombre_medicamento>
         <oncology-ontology:tipo_medicamento>Quimioterapia</oncology-ontology:tipo_medicamento>
@@ -1464,6 +1472,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_03 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Medicamento"/>
         <oncology-ontology:fabricante_medicamento>Genentech/Roche</oncology-ontology:fabricante_medicamento>
         <oncology-ontology:nombre_medicamento>Trastuzumab</oncology-ontology:nombre_medicamento>
         <oncology-ontology:tipo_medicamento>Quimioterapia</oncology-ontology:tipo_medicamento>
@@ -1949,10 +1958,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_01 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
         <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</oncology-ontology:caloria_suplemento_nutricional>
         <oncology-ontology:fabricante_suplemento_nutricional>NutriHealth Corp</oncology-ontology:fabricante_suplemento_nutricional>
         <oncology-ontology:nombre_suplemento_nutricional>NutriCervix Plus</oncology-ontology:nombre_suplemento_nutricional>
-        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</oncology-ontology:proteina_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</oncology-ontology:proteina_suplemento_nutricional>
     </owl:NamedIndividual>
     
 
@@ -1960,10 +1970,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_02 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
         <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</oncology-ontology:caloria_suplemento_nutricional>
         <oncology-ontology:fabricante_suplemento_nutricional>Wellness Foods Inc.</oncology-ontology:fabricante_suplemento_nutricional>
         <oncology-ontology:nombre_suplemento_nutricional>ColonSupport Shake</oncology-ontology:nombre_suplemento_nutricional>
-        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</oncology-ontology:proteina_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</oncology-ontology:proteina_suplemento_nutricional>
     </owl:NamedIndividual>
     
 
@@ -1971,10 +1982,11 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
     <!-- http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_03 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional_03">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Alimenticio"/>
         <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</oncology-ontology:caloria_suplemento_nutricional>
         <oncology-ontology:fabricante_suplemento_nutricional>HealthPlus Nutrition</oncology-ontology:fabricante_suplemento_nutricional>
         <oncology-ontology:nombre_suplemento_nutricional>BreastCare Protein</oncology-ontology:nombre_suplemento_nutricional>
-        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</oncology-ontology:proteina_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.0</oncology-ontology:proteina_suplemento_nutricional>
     </owl:NamedIndividual>
     
 

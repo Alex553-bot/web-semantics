@@ -613,7 +613,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#proteina_suplemento_nutricional">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Suplemento_Nutricional"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
     </owl:DatatypeProperty>
     
 
@@ -1090,6 +1090,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Alimento_Permitido"/>
+        <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_01"/>
         <oncology-ontology:puedeConsumirseEn rdf:resource="http://www.semanticweb.org/ontologies/oncology-ontology#Tratamiento_Medico_04"/>
         <oncology-ontology:alimento_nombre>Cúrcuma</oncology-ontology:alimento_nombre>
         <oncology-ontology:descripcion_alimento>La cúrcuma contiene curcumina, un compuesto que tiene propiedades antiinflamatorias y ha sido estudiado por su posible efecto en la prevención y tratamiento de diversos tipos de cáncer.</oncology-ontology:descripcion_alimento>
@@ -2199,7 +2200,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</oncology-ontology:caloria_suplemento_nutricional>
         <oncology-ontology:fabricante_suplemento_nutricional>NutriHealth Corp</oncology-ontology:fabricante_suplemento_nutricional>
         <oncology-ontology:nombre_suplemento_nutricional>NutriCervix Plus</oncology-ontology:nombre_suplemento_nutricional>
-        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</oncology-ontology:proteina_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</oncology-ontology:proteina_suplemento_nutricional>
     </owl:NamedIndividual>
     
 
@@ -2210,7 +2211,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</oncology-ontology:caloria_suplemento_nutricional>
         <oncology-ontology:fabricante_suplemento_nutricional>Wellness Foods Inc.</oncology-ontology:fabricante_suplemento_nutricional>
         <oncology-ontology:nombre_suplemento_nutricional>ColonSupport Shake</oncology-ontology:nombre_suplemento_nutricional>
-        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</oncology-ontology:proteina_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#double">25.0</oncology-ontology:proteina_suplemento_nutricional>
     </owl:NamedIndividual>
     
 
@@ -2221,7 +2222,7 @@ Melanoma: La tasa de supervivencia a 5 años varía según el estadio:
         <oncology-ontology:caloria_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</oncology-ontology:caloria_suplemento_nutricional>
         <oncology-ontology:fabricante_suplemento_nutricional>HealthPlus Nutrition</oncology-ontology:fabricante_suplemento_nutricional>
         <oncology-ontology:nombre_suplemento_nutricional>BreastCare Protein</oncology-ontology:nombre_suplemento_nutricional>
-        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</oncology-ontology:proteina_suplemento_nutricional>
+        <oncology-ontology:proteina_suplemento_nutricional rdf:datatype="http://www.w3.org/2001/XMLSchema#double">30.0</oncology-ontology:proteina_suplemento_nutricional>
     </owl:NamedIndividual>
     
 

@@ -1,10 +1,13 @@
 # # # from owlready2 import Ontology -> para la obtencion directa de una ontologia solo con el path
 from owlready2 import *
 # Para los decoradores de rutas de api
-from flask import Flask
+from flask import Flask, request
 # Para la obtencion en json de las rutas en navegador y react
 from flask import jsonify
-
+# Para procesar el texto y que sea mas versatil 
+from preprocess import preprocess
+# Para las operaciones con la ontologia lo movi a otro archivo con las funciones de las queries:
+import ontology
 # Obtencion de una ontologia mediante su absolute path
 # Tambien se puede usar el uri solo si este esta en la web (teoricamente)
 
@@ -21,7 +24,6 @@ def getOntology(path:str):
     global new_path
     new_path = path
     return get_ontology(new_path).load()
-# ontology = Ontology("ontology.rdf")
 
 # methods=['GET']
 # methods=['POST']
@@ -37,16 +39,26 @@ def getClassesOntologie(path:str):
         })
     
     return json_return
-    # if new_path :
-        
 
-ontologie = getClassesOntologie("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf")
+@app.route('/item')
+def getItemOntology():
+    iri = request.args.get('iri') 
+    item = ontology.get(iri)
+    print(item)# -> get a item based on its iri.
+    return []
 
-print(f"Lista de clases de ontologia: {ontologie}")
+@app.route('/searchClass', methods=['GET'])
+def searchClass(): 
+    query = request.args['query']
+    if query is None: 
+        abort(404, f"Class {query} not exists")
 
-# for class_ in ontology.classes():
-#     print(class__.name)
+    instances = ontology.getInstancesByClass(query)
+    return [{'iri': instance.iri, 'name': instance.name} for instance in instances]
 
-# Obtencion de clase como un arreglo convencional solo se puede acceder por el nombre de la clase
-# 
-# print(f"Impresion de clase: {ontology["Cancer"]}")
+@app.route('/search', methods=['GET'])
+def search():
+    queries = preprocess(request.args['query'])
+    if queries is [] or queries is None:
+        return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
+    return ontology.search(queries)

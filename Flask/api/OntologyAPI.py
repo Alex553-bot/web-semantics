@@ -1,7 +1,7 @@
 # # # from owlready2 import Ontology -> para la obtencion directa de una ontologia solo con el path
 from owlready2 import *
 # Para los decoradores de rutas de api
-from flask import Flask, request
+from flask import Flask, abort, request
 # Para la obtencion en json de las rutas en navegador y react
 from flask import jsonify
 # Para procesar el texto y que sea mas versatil 
@@ -11,10 +11,14 @@ import ontology
 # Obtencion de una ontologia mediante su absolute path
 # Tambien se puede usar el uri solo si este esta en la web (teoricamente)
 
+from restructure import struct_class
+
 def create_app():
+
     app = Flask(__name__)
     return app
 
+# ontology = get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 app = create_app()
 
 # Mostrar la owl para una ontologia
@@ -29,18 +33,11 @@ def getOntology(path:str):
 # methods=['POST']
 # methods=['PUT']
 # methods=['DELETE']
-@app.route('/api/v1/ontologie/classes/<path>', methods=['GET'])
-def getClassesOntologie(path:str):
-    ontology = get_ontology(path).load()
-    json_return = []
-    for classOntology in ontology.classes():
-        json_return.append({
-            "class":classOntology
-        })
-    
-    return json_return
+@app.route('/api/v1/ontologie/classes', methods=['GET'])
+def getClassesOntologie():
+    return jsonify(ontology.getClassesOntologie())
 
-@app.route('/item')
+@app.route('/item', methods=['GET'])
 def getItemOntology():
     iri = request.args.get('iri') 
     item = ontology.get(iri)
@@ -53,8 +50,7 @@ def searchClass():
     if query is None: 
         abort(404, f"Class {query} not exists")
 
-    instances = ontology.getInstancesByClass(query)
-    return [{'iri': instance.iri, 'name': instance.name} for instance in instances]
+    return jsonify(ontology.getInstancesByClass(query))
 
 @app.route('/search', methods=['GET'])
 def search():
@@ -62,3 +58,6 @@ def search():
     if queries is [] or queries is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
     return ontology.search(queries)
+
+if __name__ == '__main__' :
+    app.run(debug=True)

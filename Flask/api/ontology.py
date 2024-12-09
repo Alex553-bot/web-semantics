@@ -80,4 +80,4 @@ for row in results:
 # Prueba de instancias de clases
 	
 
-print(f"Instancias de la clase Cancer: {getInstancesByClass("Cancer")}")
+# print(f"Instancias de la clase Cancer: {getInstancesByClass("Cancer")}")

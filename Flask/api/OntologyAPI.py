@@ -54,10 +54,10 @@ def searchClass():
 
 @app.route('/search', methods=['GET'])
 def search():
-    queries = preprocess(request.args['query'])
-    if queries is [] or queries is None:
+    query = request.args['query']
+    if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
-    return ontology.search(queries)
+    return ontology.search(query)
 
 if __name__ == '__main__' :
     app.run(debug=True)

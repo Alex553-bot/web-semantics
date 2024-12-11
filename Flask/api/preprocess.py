@@ -1,22 +1,14 @@
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-from nltk.stem import SnowballStemmer
-
+import spacy
 import re
 
-nltk.download('punkt')
-nltk.download('punkt_tab')
-nltk.download('stopwords')
+nlp = spacy.load("es_core_news_sm")
 
-def preprocess(s:str):
-	s = remove_punctuation(s)
-	words = word_tokenize(s)
-	stop_words = set(stopwords.words('spanish'))
-	words = [word.lower() for word in words if word.lower() not in stop_words]
-	stemmer = SnowballStemmer('spanish')
-	stemmed_words = [stemmer.stem(word) for word in words]
-	return stemmed_words
+def preprocess(s: str):
+    s = remove_punctuation(s)
+    doc = nlp(s)    
+    processed_words = [token.lemma_.lower() for token in doc if not token.is_stop and not token.is_punct]
+    
+    return processed_words
 
-def remove_punctuation(s:str): 
-	return re.sub(r'[^\w\s]', '', s)
+def remove_punctuation(s: str): 
+    return re.sub(r'[^\w\s]', '', s)

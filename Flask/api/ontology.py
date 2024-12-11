@@ -18,7 +18,7 @@ def search(queries):
 					if contains(query, getattr(individual, propertie.name)):
 						if class_.name not in results:
 							results[class_.name] = []
-						results[class_.name].append({'name':individual.name, 'iri': (individual.iri)})
+						results[class_.name].append({'name':getNombreProp(individual, individual.get_properties()), 'iri': (individual.iri)})
 	return results
 
 def contains(element_:str, list_): 

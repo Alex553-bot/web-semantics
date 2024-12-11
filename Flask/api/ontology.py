@@ -42,6 +42,7 @@ def getInstancesByClass(name):
 	for individual in class_.instances():
 		instances.append({
 			"iri" : individual.iri,
+            "name": individual.name,
 			"individual" : struct_individuals(individual)
 		})
 	return instances

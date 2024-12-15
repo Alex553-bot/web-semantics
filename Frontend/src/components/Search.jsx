@@ -9,8 +9,8 @@ const messages = {
   es: messages_es,
   en: messages_en,
 }
-
 const translations = ['es', 'en'];
+const host = 'http://localhost:5000';
 
 function Search() {
   const [locale, setLocale] = useState('es');
@@ -20,7 +20,7 @@ function Search() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(`search?query=${query}`)
+    await fetch(`${host}/search?query=${query}`)
       .then(response => response.json())
       .then(data => {
         setResult(data);
@@ -60,7 +60,7 @@ function Search() {
           <Col xs={2}>
             <Form.Select onChange={handleChangeTranslation}>
               {translations.map(t => (
-                <option value={t}>
+                <option key={t} value={t}>
                   <FormattedMessage id={t} />
                 </option>
               ))}
@@ -70,7 +70,7 @@ function Search() {
 
         <div className='mx-auto' style={{ width: '80%' }}>
           {result && Object.keys(result).map(k => (
-            <div className='m-3'>
+            <div className='m-3' key={k}>
               <Result nameClass={k} arrayClass={result[k]} />
             </div>
           ))}

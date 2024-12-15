@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Result(props) {
   const { nameClass, arrayClass } = props;
@@ -11,8 +12,9 @@ function Result(props) {
           <Card.Header><h5>{ nameClass }</h5></Card.Header>
           {arrayClass.map(a => (
             <React.Fragment key={a.iri}>
-              <Card.Subtitle className='mt-1'><a href={a.iri}>{a.iri}</a></Card.Subtitle>
-              <Card.Subtitle className='mt-1'>{a.name}</Card.Subtitle>
+              <Link to={`/class/${nameClass}/individual/${a.name}`}>
+                <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
+              </Link>
             </React.Fragment>
           ))}
         </Card.Body>

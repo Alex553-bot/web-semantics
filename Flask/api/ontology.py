@@ -26,18 +26,21 @@ def search(query: str):
 	dict
 		A dictionary of matches, where the keys are the class names of the individuals and the values are lists of dictionaries containing the name of the property and the iri of the individual
 	"""
-	query = preprocess(query)
 	results = {}
 	for individual in ontologie.individuals():
 		#print(f"Searching within : {individual}")
-		for propertie in individual.get_properties(): 
+		for propertie in individual.get_properties():
+			ok = 0 
 			for value in getattr(individual, propertie.name, None): 
-				match = fuzzymatch(preprocess(str(value)), query)
-				if match>=40.0: 
+				match = fuzzymatch(''.join(preprocess(str(value))), query)
+				if match>=75.0: 
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
 						results[class_name] = []
 					results[class_name].append({'name': getNombreProp(individual, individual.get_properties())[0], 'iri': individual.iri})
+					ok = 1
+					break
+			if ok == 1: break
 	return results
 
 def get(iri: str): 

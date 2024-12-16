@@ -1,7 +1,7 @@
 import spacy
 import re
 
-from rapidfuzz import fuzz
+from rapidfuzz import fuzz, utils
 
 nlp = spacy.load("es_core_news_sm")
 
@@ -53,4 +53,4 @@ def match(s: str, t: str):
     Returns:
         float: The fuzzy match score (0-100) between the strings.
     """
-    return fuzz.partial_ratio(s, t)
+    return fuzz.partial_ratio(t, s, processor=utils.default_process)

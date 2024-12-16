@@ -1,9 +1,8 @@
 from owlready2 import *
 from pathlib import Path
-from rapidfuzz import fuzz
 
 from restructure import *
-from preprocess import preprocess
+from preprocess import preprocess, match as fuzzymatch
 
 path = Path(__file__).parent.resolve()
 path = path.parent.parent
@@ -13,7 +12,7 @@ path = path/"resourse/ontology.owx"
 ontologie = get_ontology(str(path)).load()
 # get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 
-def search(query):
+def search(query: str):
 	"""
 	Search within the ontology for individuals whose properties contain the query string, and return a dictionary of matches, where the keys are the class names of the individuals and the values are lists of dictionaries containing the name of the property and the iri of the individual.
 
@@ -33,7 +32,7 @@ def search(query):
 		#print(f"Searching within : {individual}")
 		for propertie in individual.get_properties(): 
 			for value in getattr(individual, propertie.name, None): 
-				match = fuzzy_match(preprocess(str(value)), query)
+				match = fuzzymatch(preprocess(str(value)), query)
 				if match>=40.0: 
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
@@ -41,20 +40,7 @@ def search(query):
 					results[class_name].append({'name': getNombreProp(individual, individual.get_properties())[0], 'iri': individual.iri})
 	return results
 
-def fuzzy_match(s, t): 
-	"""
-	Calculates the fuzzy match between two strings.
-
-	Parameters:
-		s (str): The string to match against.
-		t (str): The string to match.
-
-	Returns:
-		float: The fuzzy match score (0-100) between the strings.
-	"""
-	return fuzz.partial_ratio(s, t)
-
-def get(iri): 
+def get(iri: str): 
 	"""
 	Retrieve an item from the ontology by its IRI.
 
@@ -66,7 +52,7 @@ def get(iri):
 	"""
 	return ontologie[iri[iri.find('#'):]] # aqui deberia estar el cuerpo completo de un item basado en su iri
 
-def getInstancesByClass(name): 
+def getInstancesByClass(name: str): 
 	"""
 	Retrieve instances of a specified class from the ontology.
 

@@ -12,6 +12,7 @@ import ontology
 # Tambien se puede usar el uri solo si este esta en la web (teoricamente)
 
 from restructure import struct_class
+import dbpedia
 
 from flask_cors import CORS
 
@@ -61,7 +62,13 @@ def search():
     query = request.args['query']
     if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
-    return ontology.search(query)
+    result_dbpedia = dbpedia.searchDBPedia(preprocess(query))
+    result = ontology.search(query)
+    if len(result_dbpedia)!=0:
+        result['Disease'] = result_dbpedia
+    if len(result) == 0:
+        result['No existen busquedas encontradas'] = []
+    return result
 
 if __name__ == '__main__' :
     app.run(debug=True)

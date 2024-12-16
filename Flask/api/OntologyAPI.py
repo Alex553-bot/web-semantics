@@ -12,6 +12,7 @@ import ontology
 # Tambien se puede usar el uri solo si este esta en la web (teoricamente)
 
 from restructure import struct_class
+import dbpedia
 
 def create_app():
 
@@ -59,5 +60,9 @@ def search():
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
     return ontology.search(query)
 
+@app.route('/search2', methods=['GET'])
+def a():
+    query = preprocess(request.args['query'])
+    return dbpedia.searchDBPedia(query)
 if __name__ == '__main__' :
     app.run(debug=True)

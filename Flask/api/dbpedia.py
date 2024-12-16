@@ -13,7 +13,7 @@ graph.setQuery("""
 	select distinct ?disease where {{
 		?disease rdf:type dbo:Disease . 
 	}}
-	limit 500
+	limit 300
 """)
 
 results = graph.query().convert()['results']

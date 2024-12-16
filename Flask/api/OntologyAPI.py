@@ -58,11 +58,13 @@ def search():
     query = request.args['query']
     if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
-    return ontology.search(query)
+    result_dbpedia = dbpedia.searchDBPedia(preprocess(query))
+    result = ontology.search(query)
+    if len(result_dbpedia)!=0:
+        result['Disease'] = result_dbpedia
+    if len(result) == 0:
+        result['No existen busquedas encontradas'] = []
+    return result
 
-@app.route('/search2', methods=['GET'])
-def a():
-    query = preprocess(request.args['query'])
-    return dbpedia.searchDBPedia(query)
 if __name__ == '__main__' :
     app.run(debug=True)

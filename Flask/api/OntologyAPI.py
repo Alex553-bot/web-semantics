@@ -13,6 +13,8 @@ import ontology
 
 from restructure import struct_class
 
+from flask_cors import CORS
+
 def create_app():
 
     app = Flask(__name__)
@@ -20,6 +22,8 @@ def create_app():
 
 # ontology = get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 app = create_app()
+
+CORS(app)
 
 # Mostrar la owl para una ontologia
 # Ruta de la ontologia local: C:\Users\USER\Documents\WebSemantica\web-semantics\oncology.rdf

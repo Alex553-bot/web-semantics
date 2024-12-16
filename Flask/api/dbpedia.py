@@ -16,8 +16,7 @@ graph.setQuery(f"""
 """)
 
 results = graph.query().convert()['results']
-ontology = [{'iri': result['disease']['value'], 'name': result['disease']['value'].split('/')[-1]} for result in results['bindings']]
-print('ayuda')
+ontology = [{'iri': result['disease']['value'], 'name': ' '.join(preprocess(result['disease']['value'].split('/')[-1]))} for result in results['bindings']]
 def searchDBPedia(query):
 	#graph.setQuery(f"""
 	#	select distinct ?disease ?value where {{
@@ -29,6 +28,6 @@ def searchDBPedia(query):
 	#ontology = graph.query().convert()['results']['bindings']
 	results = []
 	for element in ontology:
-		if match(''.join(preprocess(element['name'])), query) >= 90.0:
+		if match(element['name'], query) >= 90.0:
 			results.append(element)
 	return results

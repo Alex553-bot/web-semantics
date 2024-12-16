@@ -61,7 +61,7 @@ def searchClass():
 
 @app.route('/search', methods=['GET'])
 def search():
-    query = ''.join(preprocess(request.args['query']))
+    query = ' '.join(preprocess(request.args['query']))
     lang = request.args['lang']
     if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
@@ -78,7 +78,9 @@ def translate(result, lang):
         class_instances = result[class_]
         for i in range(len(class_instances)):
             instance = class_instances[i]
-            result[class_][i]['name'] = translator.translate(result[class_][i]['name']).text
+            for key in instance.keys():
+                if key=='iri': continue
+                result[class_][i][key] = translator.translate(result[class_][i][key], dest=lang).text
     return result
 
 if __name__ == '__main__' :

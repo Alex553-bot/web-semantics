@@ -32,7 +32,7 @@ def search(query: str):
 		for propertie in individual.get_properties():
 			ok = 0 
 			for value in getattr(individual, propertie.name, None): 
-				match = fuzzymatch(''.join(preprocess(str(value))), query)
+				match = fuzzymatch(' '.join(preprocess(str(value))), query)
 				if match>=75.0: 
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 

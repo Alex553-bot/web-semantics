@@ -10,8 +10,8 @@ function Result(props) {
       <Card>
         <Card.Body>
           <Card.Header><h5>{ nameClass }</h5></Card.Header>
-          {arrayClass.map(a => (
-            <React.Fragment key={a.iri}>
+          {arrayClass.map((a, i) => (
+            <React.Fragment key={i}>
               <Link to={`/class/${nameClass}/individual/${a.name}`}>
                 <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
               </Link>

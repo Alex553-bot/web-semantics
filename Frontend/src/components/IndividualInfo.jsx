@@ -12,8 +12,7 @@ function IndividualInfo() {
       await fetch(`${host}/searchClass?query=${nameClass.replace('ontology.owx.', '')}`)
         .then(response => response.json())
         .then(data => {
-          console.log(data.find(d => d.name === individualName));
-          setIndividual(data.find(d => d.name === individualName));
+          setIndividual(data.find(d => d.name_individual === individualName));
         })
         .catch(error => console.error(error));
     }
@@ -25,19 +24,16 @@ function IndividualInfo() {
     <div>
       {individual && (
         <div>
-          <h4>{individual.name}</h4>
+          <h4>{individual.name_individual}</h4>
           <a href={individual.iri}>{individual.iri}</a>
-          <div>
-            {individual.individual.map((k, i) => (
-              <div key={i}>
-                {k.properties.map((item, j) => {
-                  const [k, v] = Object.entries(item)[0];
 
-                  return (<p key={j}><strong>{k}: </strong> {v}</p>);
-                })}
-              </div>
-            ))}
-          </div>
+          {individual.properties.map((obj, i) => {
+            const [k, v] = Object.entries(obj)[0];
+
+            if (typeof v !== 'object') {
+              return (<div key={i}><strong>{k}: </strong>{v}</div>);
+            }
+          })}
         </div>
       )}
     </div>

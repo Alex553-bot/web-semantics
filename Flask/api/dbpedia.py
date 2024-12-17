@@ -1,33 +1,37 @@
-from SPARQLWrapper import SPARQLWrapper, JSON
+from rdflib import Graph, RDF, URIRef
+from SPARQLWrapper import SPARQLWrapper, XML
+from xml.etree import ElementTree
 
 from preprocess import preprocess, match
 
 """
 IMPORT DISEASE ONTOLOGY
 """
-
-graph = SPARQLWrapper("http://dbpedia.org/sparql")
-graph.setReturnFormat(JSON)
-graph.setQuery(f"""
-	select distinct ?disease where {{
-		?disease rdf:type dbo:Disease .
-	}}
-	limit 500
+sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+sparql.setReturnFormat(XML)
+sparql.setQuery("""
+    select distinct ?disease where {
+        ?disease rdf:type dbo:Disease .
+    }
+    limit 300
 """)
 
-results = graph.query().convert()['results']
-ontology = [{'iri': result['disease']['value'], 'name': ' '.join(preprocess(result['disease']['value'].split('/')[-1]))} for result in results['bindings']]
+results = sparql.query().convert()
+graph = Graph()
+
+root = ElementTree.fromstring(results.toxml())
+
+"""DELETE ALL DUPLICATED INSTANCES"""
+for result in root.findall(".//{http://www.w3.org/2005/sparql-results#}result"):
+    uri = result.find(".//{http://www.w3.org/2005/sparql-results#}uri")
+    if uri is not None:
+        disease_uri = URIRef(uri.text)
+        graph.add((disease_uri, RDF.type, URIRef("http://dbpedia.org/ontology/Disease")))
+
 def searchDBPedia(query):
-	#graph.setQuery(f"""
-	#	select distinct ?disease ?value where {{
-	#		?disease rdf:type dbo:Disease .
-	#		filter(lcase(str(?value)) = lcase("{query}")) 
-	#	}}
-	#	limit 300
-	#""")
-	#ontology = graph.query().convert()['results']['bindings']
-	results = []
-	for element in ontology:
-		if match(element['name'], query) >= 90.0:
-			results.append(element)
-	return results
+    results = []
+    for iri, predicate, obj in graph.triples((None, RDF.type, None)):
+    	name = preprocess(iri.split('/')[-1])
+    	if (match(name, query)) >= 75.0:
+    		results.append({'iri': iri, 'name': name})
+    return results

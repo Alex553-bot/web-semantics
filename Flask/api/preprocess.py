@@ -24,7 +24,7 @@ def preprocess(s: str):
     doc = nlp(s)    
     processed_words = [token.lemma_.lower() for token in doc if not token.is_stop and not token.is_punct]
     
-    return processed_words
+    return ' '.join(processed_words)
 
 def remove_punctuation(s: str):
     """

@@ -6,7 +6,6 @@ from preprocess import preprocess, match as fuzzymatch
 
 path = Path(__file__).parent.resolve()
 path = path.parent.parent
-print(path)
 path = path/"resourse/ontology.owx"
 
 ontologie = get_ontology(str(path)).load()
@@ -32,7 +31,7 @@ def search(query: str):
 		for propertie in individual.get_properties():
 			ok = 0 
 			for value in getattr(individual, propertie.name, None): 
-				match = fuzzymatch(' '.join(preprocess(str(value))), query)
+				match = fuzzymatch(preprocess(str(value)), query)
 				if match>=75.0: 
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
@@ -43,7 +42,7 @@ def search(query: str):
 			if ok == 1: break
 	return results
 
-def get(iri: str): 
+def get(iri: str):
 	"""
 	Retrieve an item from the ontology by its IRI.
 

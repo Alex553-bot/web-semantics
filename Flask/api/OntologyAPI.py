@@ -34,7 +34,7 @@ def searchClass():
 @app.route('/search', methods=['GET'])
 def search():
     query = preprocess(request.args['query'])
-    lang = 'en'
+    lang = request.args['lang']
 
     if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend

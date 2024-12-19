@@ -3,13 +3,17 @@ import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap';
 import Result from './Result';
 import messages_es from '../translations/es.json';
 import messages_en from '../translations/en.json';
+import messages_fr from '../translations/fr.json';
+import messages_pt from '../translations/pt.json';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 
 const messages = {
   es: messages_es,
   en: messages_en,
+  fr: messages_fr,
+  pt: messages_pt,
 }
-const translations = ['es', 'en'];
+const translations = ['es', 'en', 'fr', 'pt'];
 const host = 'http://localhost:5000';
 
 function Search() {

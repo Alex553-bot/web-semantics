@@ -20,7 +20,7 @@ function Search() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(`${host}/search?query=${query}`)
+    await fetch(`${host}/search?query=${query}&lang=${locale}`)
       .then(response => response.json())
       .then(data => {
         setResult(data);

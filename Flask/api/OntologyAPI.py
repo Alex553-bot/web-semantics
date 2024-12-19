@@ -25,11 +25,11 @@ CORS(app)
 """ API ROUTES """
 @app.route('/searchClass', methods=['GET'])
 def searchClass(): 
-    query = request.args['query']
+    query = translator.translate(request.args['query'], dest='es').text
+    lang = request.args['lang']
     if query is None: 
         abort(404, f"Class {query} not exists")
-
-    return jsonify(ontology.getInstancesByClass(query))
+    return jsonify(ontology.getInstancesByClass(query, lang, translator))
 
 @app.route('/search', methods=['GET'])
 def search():
@@ -43,7 +43,7 @@ def search():
     
     result = ontology.search(preprocess(translator.translate(query, dest='es').text))
     
-    if len(result_dbpedia)!=0: result['DOID.dbpedia.Disease'] = result_dbpedia
+    if len(result_dbpedia) != 0: result['DOID.dbpedia.Disease'] = result_dbpedia
 
     if len(result) == 0:
         msg = translator.translate('No existen busquedas encontradas', dest=lang).text

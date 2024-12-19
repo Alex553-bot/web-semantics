@@ -54,12 +54,14 @@ def get(iri: str):
 	"""
 	return ontologie[iri[iri.find('#'):]] # aqui deberia estar el cuerpo completo de un item basado en su iri
 
-def getInstancesByClass(name: str): 
+def getInstancesByClass(name: str, lang: str, translator: object): 
 	"""
 	Retrieve instances of a specified class from the ontology.
 
 	Parameters:
 		name (str): The name of the class in the ontology to retrieve instances for.
+		lang (str): Language to translate the results
+		translator (object): API to google translator
 
 	Returns:
 		list: A list of dictionaries, each representing an instance of the specified class.
@@ -69,7 +71,7 @@ def getInstancesByClass(name: str):
 	class_ = getattr(ontologie, name, None)
 	if class_ is None: 
 		return []
-	return struct_individuals(class_.instances(), class_)
+	return struct_individuals(class_.instances(), class_, lang, translator)
 
 def getClassesOntologie():
 	"""

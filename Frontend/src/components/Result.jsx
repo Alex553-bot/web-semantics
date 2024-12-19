@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Result(props) {
-  const { nameClass, arrayClass } = props;
+  const { locale, nameClass, arrayClass } = props;
 
   return (
     <div>
@@ -18,7 +18,7 @@ function Result(props) {
                     <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
                   </Link>
                 ) : (
-                  <Link target='_blank' to={`/class/${encodeURIComponent(nameClass)}/individual/${encodeURIComponent(a.iri)}`}>
+                  <Link target='_blank' to={`${locale}/class/${encodeURIComponent(nameClass)}/individual/${encodeURIComponent(a.iri)}`}>
                     <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
                   </Link>
                 )

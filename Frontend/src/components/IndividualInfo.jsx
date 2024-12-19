@@ -4,13 +4,12 @@ import { useParams } from 'react-router-dom';
 const host = 'http://localhost:5000';
 
 function IndividualInfo() {
-  const { nameClass, individualIri } = useParams();
+  const { locale, nameClass, individualIri } = useParams();
   const [individual, setIndividual] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(nameClass, individualIri);
-      await fetch(`${host}/searchClass?query=${decodeURIComponent(nameClass).replace('ontology.owx.', '')}`)
+      await fetch(`${host}/searchClass?query=${decodeURIComponent(nameClass).replace('ontology.owx.', '')}&lang=${locale}`)
         .then(response => response.json())
         .then(data => {
           setIndividual(data.find(d => d.iri === decodeURIComponent(individualIri)));

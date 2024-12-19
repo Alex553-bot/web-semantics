@@ -75,7 +75,7 @@ function Search() {
         <div className='mx-auto' style={{ width: '80%' }}>
           {result && Object.keys(result).map(k => (
             <div className='m-3' key={k}>
-              <Result nameClass={k} arrayClass={result[k]} />
+              <Result locale={locale} nameClass={k} arrayClass={result[k]} />
             </div>
           ))}
         </div>

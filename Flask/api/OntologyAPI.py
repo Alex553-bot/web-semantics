@@ -1,63 +1,66 @@
-# # # from owlready2 import Ontology -> para la obtencion directa de una ontologia solo con el path
-from owlready2 import *
-# Para los decoradores de rutas de api
+# Decorators for api routes
 from flask import Flask, abort, request
-# Para la obtencion en json de las rutas en navegador y react
+# JSON format for responses
 from flask import jsonify
-# Para procesar el texto y que sea mas versatil 
+# NLP processing 
 from preprocess import preprocess
-# Para las operaciones con la ontologia lo movi a otro archivo con las funciones de las queries:
+# Ontology searches: local and external (DBPedia)
 import ontology
-# Obtencion de una ontologia mediante su absolute path
-# Tambien se puede usar el uri solo si este esta en la web (teoricamente)
-
-from restructure import struct_class
 import dbpedia
+# Google Translator API
+from googletrans import Translator
+# Structure output format
+from restructure import struct_class
+# CORS web
+from flask_cors import CORS
 
 def create_app():
-
     app = Flask(__name__)
     return app
 
-# ontology = get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 app = create_app()
+translator = Translator()
+CORS(app)
 
-# methods=['GET']
-# methods=['POST']
-# methods=['PUT']
-# methods=['DELETE']
-@app.route('/api/v1/ontologie/classes', methods=['GET'])
-def getClassesOntologie():
-    return jsonify(ontology.getClassesOntologie())
-
-@app.route('/item', methods=['GET'])
-def getItemOntology():
-    iri = request.args.get('iri') 
-    item = ontology.get(iri)
-    print(item)# -> get a item based on its iri.
-    return []
-
+""" API ROUTES """
 @app.route('/searchClass', methods=['GET'])
 def searchClass(): 
-    query = request.args['query']
+    query = translator.translate(request.args['query'], dest='es').text
+    lang = request.args['lang']
     if query is None: 
         abort(404, f"Class {query} not exists")
-
-    return jsonify(ontology.getInstancesByClass(query))
+    return jsonify(ontology.getInstancesByClass(query, lang, translator))
 
 @app.route('/search', methods=['GET'])
 def search():
-    query = request.args['query']
+    query = preprocess(request.args['query'])
+    lang = request.args['lang']
+
     if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
-    return ontology.search(query)
+    
+    result_dbpedia = dbpedia.searchDBPedia(preprocess(translator.translate(query, dest='en').text))
+    
+    result = ontology.search(preprocess(translator.translate(query, dest='es').text))
+    
+    if len(result_dbpedia) != 0: result['DOID.dbpedia.Disease'] = result_dbpedia
 
-@app.route('/search2', methods=['GET'])
-def a():
-    query = preprocess(request.args['query'])
-    result = dbpedia.searchDBPedia(query)
+    if len(result) == 0:
+        msg = translator.translate('No existen busquedas encontradas', dest=lang).text
+        result[msg] = []
+
+    return translate(result, lang)
+
+def translate(result, lang):
+    for class_ in result.keys():
+        class_instances = result[class_]
+        for i in range(len(class_instances)):
+            instance = class_instances[i]
+            for key in instance.keys():
+                if key=='iri': continue
+                result[class_][i][key] = translator.translate(result[class_][i][key], dest=lang).text
+    
     return result
-
 
 if __name__ == '__main__' :
     app.run(debug=True)

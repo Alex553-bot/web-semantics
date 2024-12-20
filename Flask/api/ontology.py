@@ -6,7 +6,6 @@ from preprocess import preprocess, match as fuzzymatch
 
 path = Path(__file__).parent.resolve()
 path = path.parent.parent
-print(path)
 path = path/"resourse/ontology.owx"
 
 ontologie = get_ontology(str(path)).load()
@@ -26,21 +25,24 @@ def search(query: str):
 	dict
 		A dictionary of matches, where the keys are the class names of the individuals and the values are lists of dictionaries containing the name of the property and the iri of the individual
 	"""
-	query = preprocess(query)
 	results = {}
 	for individual in ontologie.individuals():
 		#print(f"Searching within : {individual}")
-		for propertie in individual.get_properties(): 
+		for propertie in individual.get_properties():
+			ok = 0 
 			for value in getattr(individual, propertie.name, None): 
 				match = fuzzymatch(preprocess(str(value)), query)
-				if match>=40.0: 
-					class_name = str(list(individual.is_a)[0].name)
+				if match>=75.0: 
+					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
 						results[class_name] = []
 					results[class_name].append({'name': getNombreProp(individual, individual.get_properties())[0], 'iri': individual.iri})
+					ok = 1
+					break
+			if ok == 1: break
 	return results
 
-def get(iri: str): 
+def get(iri: str):
 	"""
 	Retrieve an item from the ontology by its IRI.
 
@@ -52,12 +54,14 @@ def get(iri: str):
 	"""
 	return ontologie[iri[iri.find('#'):]] # aqui deberia estar el cuerpo completo de un item basado en su iri
 
-def getInstancesByClass(name: str): 
+def getInstancesByClass(name: str, lang: str, translator: object): 
 	"""
 	Retrieve instances of a specified class from the ontology.
 
 	Parameters:
 		name (str): The name of the class in the ontology to retrieve instances for.
+		lang (str): Language to translate the results
+		translator (object): API to google translator
 
 	Returns:
 		list: A list of dictionaries, each representing an instance of the specified class.
@@ -67,7 +71,7 @@ def getInstancesByClass(name: str):
 	class_ = getattr(ontologie, name, None)
 	if class_ is None: 
 		return []
-	return struct_individuals(class_.instances(), class_)
+	return struct_individuals(class_.instances(), class_, lang, translator)
 
 def getClassesOntologie():
 	"""

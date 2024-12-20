@@ -22,14 +22,6 @@ def create_app():
 # ontology = get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 app = create_app()
 
-# Mostrar la owl para una ontologia
-# Ruta de la ontologia local: C:\Users\USER\Documents\WebSemantica\web-semantics\oncology.rdf
-@app.route('/api/v1/ontologie', methods=['GET'])
-def getOntology(path:str):
-    global new_path
-    new_path = path
-    return get_ontology(new_path).load()
-
 # methods=['GET']
 # methods=['POST']
 # methods=['PUT']
@@ -63,6 +55,9 @@ def search():
 @app.route('/search2', methods=['GET'])
 def a():
     query = preprocess(request.args['query'])
-    return dbpedia.searchDBPedia(query)
+    result = dbpedia.searchDBPedia(query)
+    return result
+
+
 if __name__ == '__main__' :
     app.run(debug=True)

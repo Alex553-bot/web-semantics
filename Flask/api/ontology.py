@@ -34,7 +34,7 @@ def search(query: str):
 			for value in getattr(individual, propertie.name, None): 
 				match = fuzzymatch(preprocess(str(value)), query)
 				if match>=40.0: 
-					class_name = str(list(individual.is_a)[0])
+					class_name = str(list(individual.is_a)[0].name)
 					if class_name not in results: 
 						results[class_name] = []
 					results[class_name].append({'name': getNombreProp(individual, individual.get_properties())[0], 'iri': individual.iri})

@@ -25,3 +25,21 @@ def searchDBPedia(query):
 		if match(preprocess(element['name']), query) >= 0.5:
 			results.append(element)
 	return results
+
+def storeData(query):
+	graph.setQuery(f"""
+		PREFIX dbo: <http://dbpedia.org/ontology/>
+		PREFIX dbr: <http://dbpedia.org/resource/>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+		SELECT ?cancer ?name
+		WHERE {{
+		?{query} a dbp:name ?abstract.
+		FILTER(langMatches(lang(?abstract), "es"))
+		}}
+		LIMIT 10
+	""")
+	results = graph.query().convert()['results']
+	print("Resultados obtenidos: ", results)
+
+storeData("cancer")

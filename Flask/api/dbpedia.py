@@ -13,7 +13,7 @@ sparql.setQuery("""
     select distinct ?disease where {
         ?disease rdf:type dbo:Disease .
     }
-    limit 300
+    limit 5
 """)
 
 results = sparql.query().convert()

@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Search from './components/Search';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import IndividualInfo from './components/IndividualInfo';

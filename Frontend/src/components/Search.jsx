@@ -38,19 +38,19 @@ function Search() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <IntlProvider locale={locale} messages={messages[locale]}>
-        <Row className='align-items-center'>
+        <Row className='align-items-center mx-auto'>
           <Col xs={9}>
             <Form onSubmit={handleSubmit}>
-              <div className='mt-3 mb-2 mx-auto' style={{ width: '70%' }}>
+              <div className='mt-3 mb-2'>
                 <InputGroup size='lg'>
                   <Form.Control
                     placeholder={messages[locale]['app.placeholder']}
                     onChange={(e) => setQuery(e.target.value) }
                   />
                   <Button
-                    variant='outline-secondary'
+                    variant='secondary'
                     id='search-button'
                     type='submit'
                   >
@@ -65,14 +65,14 @@ function Search() {
             <Form.Select onChange={handleChangeTranslation}>
               {translations.map(t => (
                 <option key={t} value={t}>
-                  <FormattedMessage id={t} />
+                  <FormattedMessage id={t}/>
                 </option>
               ))}
             </Form.Select>
           </Col>
         </Row>
 
-        <div className='mx-auto' style={{ width: '80%' }}>
+        <div className='mx-auto'>
           {result && Object.keys(result).map(k => (
             <div className='m-3' key={k}>
               <Result locale={locale} nameClass={k} arrayClass={result[k]} />

@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Result(props) {
-  const { nameClass, arrayClass } = props;
+  const { locale, nameClass, arrayClass } = props;
 
   return (
     <div>
@@ -12,9 +12,17 @@ function Result(props) {
           <Card.Header><h5>{ nameClass }</h5></Card.Header>
           {arrayClass.map((a, i) => (
             <React.Fragment key={i}>
-              <Link to={`/class/${nameClass}/individual/${a.name}`}>
-                <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
-              </Link>
+              { nameClass === 'DOID.dbpedia.Disease' ? 
+                (
+                  <Link target='_blank' to={a.iri}>
+                    <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
+                  </Link>
+                ) : (
+                  <Link target='_blank' to={`${locale}/class/${encodeURIComponent(nameClass)}/individual/${encodeURIComponent(a.iri)}`}>
+                    <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
+                  </Link>
+                )
+              }
             </React.Fragment>
           ))}
         </Card.Body>

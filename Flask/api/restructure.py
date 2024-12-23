@@ -1,4 +1,6 @@
 from owlready2 import *
+from preprocess import preprocess
+from translator import translate
 
 def struct_class(ontoClass):
     """
@@ -20,7 +22,7 @@ def struct_class(ontoClass):
             })
     return herarchy
 
-def struct_individuals(individual, classOntology):
+def struct_individuals(individual, classOntology, lang):
     """
     Retrieve instances of a specified class from the ontology and structure them into a list of dictionaries.
     
@@ -38,12 +40,15 @@ def struct_individuals(individual, classOntology):
     for individual in classOntology.instances():
         instances.append({
             "iri" : individual.iri,
-            "name_class": classOntology.name,
-            "name_individual": getNombreProp(individual, individual.get_properties())[0],
-            "properties" : struct_properties(individual)})
+            "name_class": translate(preprocess(classOntology.name), dest=lang),
+            "name_individual": translate(preprocess(getNombreProp(individual, individual.get_properties())[0]), dest=lang),
+            "properties" : struct_properties(individual, lang),
+            "sample_name": individual.name,
+            "name_individual_o": getNombreProp(individual, individual.get_properties())[0],
+        })
     return instances
 
-def struct_properties(ontoIndividual):
+def struct_properties(ontoIndividual, lang):
     """
     Funcion recursiva para obtener todas las propiedades de una instancia de una clase
     
@@ -70,13 +75,13 @@ def struct_properties(ontoIndividual):
             herarchy.append({
                 "relationship" : {
                     "iri" : value.iri,
-                    "name_object": getNombreProp(individual_temp, individual_temp.get_properties())[0],
-                    "properties": struct_properties(individual_temp)
+                    "name_object": translate(preprocess(getNombreProp(individual_temp, individual_temp.get_properties())[0]), dest=lang),
+                    "properties": struct_properties(individual_temp, lang)
                 }})
         else :
             if "nombre" not in str(value.name):
                 herarchy.append({
-                value.name : str(getattr(ontoIndividual, value.name, None)[0])})
+                value.name : translate(preprocess(str(getattr(ontoIndividual, value.name, None)[0])), dest=lang)})
     return herarchy
 
 def getNombreProp(individual, properties):

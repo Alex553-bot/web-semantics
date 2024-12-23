@@ -42,7 +42,10 @@ def struct_individuals(individual, classOntology, lang):
             "iri" : individual.iri,
             "name_class": translate(preprocess(classOntology.name), dest=lang),
             "name_individual": translate(preprocess(getNombreProp(individual, individual.get_properties())[0]), dest=lang),
-            "properties" : struct_properties(individual, lang)})
+            "properties" : struct_properties(individual, lang),
+            "sample_name": individual.name,
+            "name_individual_o": getNombreProp(individual, individual.get_properties())[0],
+        })
     return instances
 
 def struct_properties(ontoIndividual, lang):

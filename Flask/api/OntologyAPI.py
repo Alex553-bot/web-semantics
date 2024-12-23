@@ -56,7 +56,7 @@ def translate(result, lang):
         for i in range(len(class_instances)):
             instance = class_instances[i]
             for key in instance.keys():
-                if key=='iri': continue
+                if key=='iri' or key=='name_individual' or key=='sample_name': continue
                 result[class_][i][key] = translate_(result[class_][i][key], dest=lang)    
     return result
 

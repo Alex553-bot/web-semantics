@@ -36,7 +36,12 @@ def search(query: str):
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
 						results[class_name] = []
-					results[class_name].append({'name': getNombreProp(individual, individual.get_properties())[0], 'iri': individual.iri})
+					results[class_name].append({
+						'name': getNombreProp(individual, individual.get_properties())[0], 
+						'iri': individual.iri,
+						'name_individual': getNombreProp(individual, individual.get_properties())[0], 
+						'sample_name': individual.name
+					})
 					ok = 1
 					break
 			if ok == 1: break

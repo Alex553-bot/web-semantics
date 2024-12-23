@@ -76,7 +76,7 @@ def struct_properties(ontoIndividual, lang):
                 "relationship" : {
                     "iri" : value.iri,
                     "name_object": translate(preprocess(getNombreProp(individual_temp, individual_temp.get_properties())[0]), dest=lang),
-                    "properties": struct_properties(individual_temp, lang)
+                    #"properties": struct_properties(individual_temp, lang)
                 }})
         else :
             if "nombre" not in str(value.name):

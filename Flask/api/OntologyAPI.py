@@ -22,6 +22,9 @@ CORS(app)
 @app.route('/', methods=['GET'])
 def index(): 
     return render_template('index.html')
+@app.route('/<locale>/class/<class_>/individual/<name_individual>', methods=['GET'])
+def indexIndividual(locale, class_, name_individual): 
+    return render_template('index.html')
 
 @app.route('/searchClass', methods=['GET'])
 def searchClass(): 

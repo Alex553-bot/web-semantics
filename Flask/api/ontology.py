@@ -3,15 +3,15 @@ from pathlib import Path
 
 from restructure import *
 from preprocess import preprocess, match as fuzzymatch
+from translator import translate
 
 path = Path(__file__).parent.resolve()
 path = path.parent.parent
 path = path/"resourse/ontology.owx"
 
 ontologie = get_ontology(str(path)).load()
-# get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 
-def search(query: str):
+def search(query: str, lang: str):
 	"""
 	Search within the ontology for individuals whose properties contain the query string, and return a dictionary of matches, where the keys are the class names of the individuals and the values are lists of dictionaries containing the name of the property and the iri of the individual.
 
@@ -19,6 +19,8 @@ def search(query: str):
 	----------
 	query : str
 		The string to search for
+	lang : str
+		Language to translate
 
 	Returns
 	-------
@@ -32,12 +34,12 @@ def search(query: str):
 			ok = 0 
 			for value in getattr(individual, propertie.name, None): 
 				match = fuzzymatch(preprocess(str(value)), query)
-				if match>=50.0: 
+				if match >= 65.0: 
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
 						results[class_name] = []
 					results[class_name].append({
-						'name': getNombreProp(individual, individual.get_properties())[0], 
+						'name': translate(getNombreProp(individual, individual.get_properties())[0], lang), 
 						'iri': individual.iri,
 						'name_individual': getNombreProp(individual, individual.get_properties())[0], 
 						'sample_name': individual.name

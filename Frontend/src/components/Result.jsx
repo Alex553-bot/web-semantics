@@ -18,7 +18,7 @@ function Result(props) {
                     <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
                   </Link>
                 ) : (
-                  <Link target='_blank' to={`${locale}/class/${encodeURIComponent(nameClass)}/individual/${encodeURIComponent(a.iri)}`}>
+                  <Link target='_blank' to={`${locale}/class/${encodeURIComponent(nameClass)}/individual/${encodeURIComponent(a.sample_name)}`}>
                     <Card.Subtitle className='m-2'>{a.name}</Card.Subtitle>
                   </Link>
                 )

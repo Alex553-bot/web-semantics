@@ -30,7 +30,7 @@ function BackgroundCircles() {
       }, 20000);
     };
 
-    const intervalId = setInterval(generateCircles, 500);
+    const intervalId = setInterval(generateCircles, 1000);
 
     return () => clearInterval(intervalId);
   }, []);

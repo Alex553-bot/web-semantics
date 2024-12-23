@@ -12,7 +12,7 @@ function IndividualInfo() {
       await fetch(`${host}/searchClass?query=${decodeURIComponent(nameClass).replace('ontology.owx.', '')}&lang=${locale}`)
         .then(response => response.json())
         .then(data => {
-          setIndividual(data.find(d => d.iri === decodeURIComponent(individualIri)));
+          setIndividual(data.find(d => d.sample_name === decodeURIComponent(individualIri)));
         })
         .catch(error => console.error(error));
     }
@@ -23,7 +23,7 @@ function IndividualInfo() {
   return (
     <div>
       {individual && (
-        <div>
+        <div style={{color: 'white', padding: '20px', fontSize: '1.2rem'}}>
           <h4>{individual.name_individual}</h4>
           <a href={individual.iri}>{individual.iri}</a>
 

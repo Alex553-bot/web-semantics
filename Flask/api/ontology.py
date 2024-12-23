@@ -11,6 +11,24 @@ path = path/"resourse/ontology.owx"
 ontologie = get_ontology(str(path)).load()
 # get_ontology("C:/Users/USER/Documents/WebSemantica/web-semantics/oncology.rdf").load()
 
+def getClassesOntologie():
+	"""
+	Retrieve all classes and their subclasses from the ontology.
+
+	Returns:
+		list: A list of dictionaries, each representing a class in the ontology.
+			Each dictionary contains the 'name_class' and 'sub_clasess' of the class.
+			'sub_clasess' is a list of dictionaries, each representing a subclass of the class.
+			Each of these dictionaries contains the 'name_class' and 'sub_clasess' of the subclass.
+	"""
+	clasess = []
+	for classOntology in ontologie.classes():
+		if classOntology.name not in str(clasess) :
+			clasess.append(classOntology.name)
+	return clasess
+
+name_classes = getClassesOntologie()
+
 def search(query: str):
 	"""
 	Search within the ontology for individuals whose properties contain the query string, and return a dictionary of matches, where the keys are the class names of the individuals and the values are lists of dictionaries containing the name of the property and the iri of the individual.
@@ -25,6 +43,9 @@ def search(query: str):
 	dict
 		A dictionary of matches, where the keys are the class names of the individuals and the values are lists of dictionaries containing the name of the property and the iri of the individual
 	"""
+	# if query not in name_classes:
+	# 	return {"error" : 400,"message ": "No existe la entidad en la ontologia local"}
+	
 	results = {}
 	for individual in ontologie.individuals():
 		#print(f"Searching within : {individual}")
@@ -73,21 +94,63 @@ def getInstancesByClass(name: str, lang: str, translator: object):
 		return []
 	return struct_individuals(class_.instances(), class_, lang, translator)
 
-def getClassesOntologie():
-	"""
-	Retrieve all classes and their subclasses from the ontology.
+def store_in_ontology(items_list, query):
+	class_mapping = {
+		"drug": {
+			"class": "Tratamiento_medico",
+			"name_prop": "nombre_tratamiento_medico",
+			"desc_prop": "funcion_tratamiento_medico"
+		},
+		"disease": {
+			"class": "Cancer",
+			"name_prop": "cancer_nombre",
+			"desc_prop": "fases_del_cancer"
+		},
+		"organization": {
+			"class": "Centro_medico",
+			"name_prop": "nombre_centro_medico",
+			"desc_prop": "descripcion_centro_medico"
+		},
+		"food": {
+			"class": "Alimento_Permitido",
+			"name_prop": "alimento_nombre",
+			"desc_prop": "descripcion_alimento"
+		}
+	}
 
-	Returns:
-		list: A list of dictionaries, each representing a class in the ontology.
-			Each dictionary contains the 'name_class' and 'sub_clasess' of the class.
-			'sub_clasess' is a list of dictionaries, each representing a subclass of the class.
-			Each of these dictionaries contains the 'name_class' and 'sub_clasess' of the subclass.
-	"""
-	clasess = []
-	for classOntology in ontologie.classes():
-		if classOntology.name not in str(clasess) :
-			clasess.append({
-				"name_class" : classOntology.name,
-				"sub_clasess": struct_class(classOntology),
-			})
-	return clasess
+	try:
+		with ontologie: 
+			for item in items_list:
+				item_type = str(item.get('type', {}).get('value', '')).lower()
+				
+				if item_type in class_mapping:
+					mapping = class_mapping[item_type]
+					
+					onto_class = ontologie.search_one(iri=f"*#{mapping['class']}")
+					if not onto_class:
+						print(f"Clase no encontrada: {mapping['class']}")
+						continue
+					
+					try:
+						new_individual = onto_class()
+						
+						if 'name' in item and mapping['name_prop']:
+							setattr(new_individual, mapping['name_prop'], 
+									item['name']['value'])
+						
+						if 'comment' in item and mapping['desc_prop']:
+							setattr(new_individual, mapping['desc_prop'], 
+									item['comment']['value'])
+							
+						print(f"Creado individuo de tipo {item_type}: {item.get('name', {}).get('value', 'Sin nombre')}")
+					
+					except Exception as e:
+						print(f"Error al crear individuo de tipo {item_type}: {str(e)}")
+				else:
+					print(f"Tipo no reconocido: {item_type}")
+					
+		ontologie.save(file=str(path))
+	except Exception as e:
+		return {"error": 500, "message": f"Error al guardar en la ontología: {str(e)}"}
+
+	return search(query);

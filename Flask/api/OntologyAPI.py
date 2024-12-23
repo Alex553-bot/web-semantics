@@ -49,7 +49,15 @@ def search():
         msg = translator.translate('No existen busquedas encontradas', dest=lang).text
         result[msg] = []
 
-    return translate(result, lang)
+    return result
+    
+@app.route('/addition', methods=['GET'])
+def route_addition():
+    query = request.args['query']
+
+    # return jsonify(ontology.getClassesOntologie())
+    return jsonify(dbpedia.storeData(translator.translate(query, dest='en').text, request.args['lang']))
+    # return jsonify(dbpedia.verificate_name(query))
 
 def translate(result, lang):
     for class_ in result.keys():

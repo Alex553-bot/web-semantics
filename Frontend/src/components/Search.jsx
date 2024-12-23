@@ -4,6 +4,7 @@ import Result from './Result';
 import messages_es from '../translations/es.json';
 import messages_en from '../translations/en.json';
 import { FormattedMessage, IntlProvider } from 'react-intl';
+import ProgressBar from './ProgresBar';
 
 const messages = {
   es: messages_es,
@@ -16,16 +17,18 @@ function Search() {
   const [locale, setLocale] = useState('es');
   const [query, setQuery] = useState(null);
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await fetch(`${host}/search?query=${query}`)
+    setLoading(true);
+    await fetch(`${host}/search?query=${query}&lang=${locale}`)
       .then(response => response.json())
       .then(data => {
         setResult(data);
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
+      .finally(() => setLoading(false));
   }
 
   const handleChangeTranslation = (e) => {
@@ -69,7 +72,7 @@ function Search() {
         </Row>
 
         <div className='mx-auto' style={{ width: '80%' }}>
-          {result && Object.keys(result).map(k => (
+          {loading ? <ProgressBar/> : result && Object.keys(result).map(k => (
             <div className='m-3' key={k}>
               <Result nameClass={k} arrayClass={result[k]} />
             </div>

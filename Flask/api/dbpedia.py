@@ -3,6 +3,7 @@ from SPARQLWrapper import SPARQLWrapper, XML, JSON
 from xml.etree import ElementTree
 
 from preprocess import preprocess, match
+from ontology import store_in_ontology
 
 """
 IMPORT DISEASE ONTOLOGY
@@ -28,6 +29,37 @@ for result in root.findall(".//{http://www.w3.org/2005/sparql-results#}result"):
         disease_uri = URIRef(uri.text)
         graph.add((disease_uri, RDF.type, URIRef("http://dbpedia.org/ontology/Disease")))
 
+def verificate_name(name_search):
+    sparql.setReturnFormat(JSON)
+
+    sparql.setQuery(f"""
+        PREFIX dbo: <http://dbpedia.org/ontology/>
+        PREFIX dbr: <http://dbpedia.org/resource/>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT DISTINCT ?related ?name
+        WHERE {{
+            ?resource dct:subject/skos:broader* <http://dbpedia.org/resource/Category:Oncology> ;
+                    dbo:wikiPageWikiLink ?related .
+            ?related rdfs:label ?name .
+            FILTER(lang(?name) = "en")
+        }}
+            
+    """)
+    results = [bind["name"]["value"] for bind in sparql.query().convert()['results']['bindings']]
+
+    result_query = []
+    for name in results:
+        if name_search in name:
+            result_query.append(name)
+        if len(result_query) > 50 :
+            break
+
+    if len(result_query) > 0:
+        return result_query
+    else:
+        return {"error" : 400,"message ": "No existe la entidad en la ontologia de dbpedia"}
+
 def searchDBPedia(query):
 	results = []
 	for iri, predicate, obj in graph.triples((None, RDF.type, None)):
@@ -36,22 +68,98 @@ def searchDBPedia(query):
 			results.append({'iri': iri, 'name': name})
 	return results
 
-def storeData(query):
-	sparql.setReturnFormat(JSON)
-	sparql.setQuery(f"""
-		PREFIX dbo: <http://dbpedia.org/ontology/>
-		PREFIX dbr: <http://dbpedia.org/resource/>
-		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-		PREFIX dbp: <http://dbpedia.org/property/>
+def storeData(entity_type, lang):
+    sparql.setReturnFormat(JSON)
 
-		SELECT *
-		WHERE {{?{query} a 
-					dbo:Disease ;
-					rdfs:label ?name .
-			FILTER(CONTAINS(LCASE(?name), "{query}") && langMatches(lang(?name), "es"))}}
-		LIMIT 10
-	""")
-	results = sparql.query().convert()['results']
-	print("Resultados obtenidos: ", results)
+    names = verificate_name(entity_type)
 
-storeData("tumor")
+    if type(names) == dict:
+        return names
+
+    results = []
+
+    for name in names :
+        sparql.setQuery(f"""
+            PREFIX dbo: <http://dbpedia.org/ontology/>
+            PREFIX dbr: <http://dbpedia.org/resource/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+            SELECT DISTINCT ?entity (SAMPLE(?n) as ?name) (SAMPLE(?c) as ?comment) ?type
+            WHERE {{
+                ?entity rdfs:label "{name}"@en ;
+                        rdfs:label ?n ;
+                        rdfs:comment ?c .
+                ?entity rdf:type ?typeClass .
+                ?typeClass rdfs:label ?type .
+                FILTER(lang(?type) = "en")
+
+                OPTIONAL{{ FILTER(lang(?n) = "{lang}") }}
+                OPTIONAL{{ FILTER(lang(?n) = "en") }}
+                OPTIONAL{{ FILTER(lang(?c) = "{lang}") }}
+                OPTIONAL{{ FILTER(lang(?c) = "en") }}
+            }}
+            """)
+
+        result = sparql.query().convert()["results"]["bindings"]
+        if len(result) > 0:
+            results.append(result[0])
+    store_in_ontology(results, entity_type)
+    # print("Resultados obtenidos: ", results)
+
+# def storeData(entity_type):
+#     sparql.setReturnFormat(JSON)
+#     names = verificate_name(entity_type)
+
+#     if type(names) == dict:
+#         return names
+
+#     results = []
+#     chunk_size = 5  # Procesamos 5 nombres a la vez
+    
+#     for i in range(0, len(names), chunk_size):
+#         chunk_names = names[i:i + chunk_size]
+#         # Corregimos el formato de VALUES
+#         values_string = ' '.join(f'"{name}"@en' for name in chunk_names)
+        
+#         sparql.setQuery(f"""
+#             PREFIX dbo: <http://dbpedia.org/ontology/>
+#             PREFIX dbr: <http://dbpedia.org/resource/>
+#             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+#             PREFIX dct: <http://purl.org/dc/terms/>
+#             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+#             SELECT DISTINCT ?entity (SAMPLE(?n) as ?name) (SAMPLE(?c) as ?comment) ?type
+#             WHERE {{
+#                 VALUES ?searchLabel {{ {values_string} }}
+#                 ?entity rdfs:label ?searchLabel ;
+#                         rdfs:label ?n ;
+#                         rdfs:comment ?c .
+                
+#                 ?entity rdf:type ?typeClass .
+#                 ?typeClass rdfs:label ?type .
+#                 FILTER(lang(?type) = "en")
+
+#                 ?entity dct:subject/skos:broader* <http://dbpedia.org/resource/Category:Oncology>
+
+#                 OPTIONAL {{ 
+#                     ?entity rdfs:label ?name .
+#                     FILTER(lang(?n) = "es")
+#                 }}
+                
+#                 OPTIONAL {{ 
+#                     ?entity rdfs:comment ?c .
+#                     FILTER(lang(?c) = "es")
+#                 }}
+#             }}
+#             """)
+        
+#         result = sparql.query().convert()["results"]["bindings"]
+#         print("Result: ", values_string)
+#         if len(result) > 0:
+#             results.append(result[0])
+    
+
+#     return results
+# storeData("tumor")

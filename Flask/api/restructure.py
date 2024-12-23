@@ -77,7 +77,8 @@ def struct_properties(ontoIndividual, lang, translator):
         else :
             if "nombre" not in str(value.name):
                 herarchy.append({
-                value.name : translator.translate(preprocess(str(getattr(ontoIndividual, value.name, None)[0])), dest=lang).text})
+                value.name : str(getattr(ontoIndividual, value.name, None)[0])})
+                # translator.translate(preprocess(str(getattr(ontoIndividual, value.name, None)[0])), dest=lang).text})
     return herarchy
 
 def getNombreProp(individual, properties):

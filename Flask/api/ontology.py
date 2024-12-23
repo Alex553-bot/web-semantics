@@ -32,7 +32,7 @@ def search(query: str):
 			ok = 0 
 			for value in getattr(individual, propertie.name, None): 
 				match = fuzzymatch(preprocess(str(value)), query)
-				if match>=75.0: 
+				if match>=50.0: 
 					class_name = str(list(individual.is_a)[0])
 					if class_name not in results: 
 						results[class_name] = []
@@ -59,14 +59,13 @@ def get(iri: str):
 	"""
 	return ontologie[iri[iri.find('#'):]] # aqui deberia estar el cuerpo completo de un item basado en su iri
 
-def getInstancesByClass(name: str, lang: str, translator: object): 
+def getInstancesByClass(name: str, lang: str): 
 	"""
 	Retrieve instances of a specified class from the ontology.
 
 	Parameters:
 		name (str): The name of the class in the ontology to retrieve instances for.
 		lang (str): Language to translate the results
-		translator (object): API to google translator
 
 	Returns:
 		list: A list of dictionaries, each representing an instance of the specified class.
@@ -76,7 +75,7 @@ def getInstancesByClass(name: str, lang: str, translator: object):
 	class_ = getattr(ontologie, name, None)
 	if class_ is None: 
 		return []
-	return struct_individuals(class_.instances(), class_, lang, translator)
+	return struct_individuals(class_.instances(), class_, lang)
 
 def getClassesOntologie():
 	"""

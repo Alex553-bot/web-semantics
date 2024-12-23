@@ -27,10 +27,10 @@ function BackgroundCircles() {
       
       setTimeout(() => {
         body.removeChild(circle);
-      }, 7000);
+      }, 20000);
     };
 
-    const intervalId = setInterval(generateCircles, 2000);
+    const intervalId = setInterval(generateCircles, 500);
 
     return () => clearInterval(intervalId);
   }, []);

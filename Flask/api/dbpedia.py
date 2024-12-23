@@ -13,7 +13,7 @@ sparql.setQuery("""
     select distinct ?disease where {
         ?disease rdf:type dbo:Disease .
     }
-    limit 5
+    limit 500
 """)
 
 results = sparql.query().convert()
@@ -32,6 +32,6 @@ def searchDBPedia(query):
     results = []
     for iri, predicate, obj in graph.triples((None, RDF.type, None)):
     	name = preprocess(iri.split('/')[-1])
-    	if (match(name, query)) >= 75.0:
+    	if (match(name, query)) >= 50.0:
     		results.append({'iri': iri, 'name': name})
     return results

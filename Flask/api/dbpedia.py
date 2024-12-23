@@ -14,7 +14,7 @@ sparql.setQuery("""
     select distinct ?disease where {
         ?disease rdf:type dbo:Disease .
     }
-    limit 300
+    limit 500
 """)
 
 results = sparql.query().convert()
@@ -64,7 +64,7 @@ def searchDBPedia(query):
 	results = []
 	for iri, predicate, obj in graph.triples((None, RDF.type, None)):
 		name = preprocess(iri.split('/')[-1])
-		if (match(name, query)) >= 75.0:
+		if (match(name, query)) >= 50.0:
 			results.append({'iri': iri, 'name': name})
 	return results
 
@@ -106,60 +106,3 @@ def storeData(entity_type, lang):
         if len(result) > 0:
             results.append(result[0])
     store_in_ontology(results, entity_type)
-    # print("Resultados obtenidos: ", results)
-
-# def storeData(entity_type):
-#     sparql.setReturnFormat(JSON)
-#     names = verificate_name(entity_type)
-
-#     if type(names) == dict:
-#         return names
-
-#     results = []
-#     chunk_size = 5  # Procesamos 5 nombres a la vez
-    
-#     for i in range(0, len(names), chunk_size):
-#         chunk_names = names[i:i + chunk_size]
-#         # Corregimos el formato de VALUES
-#         values_string = ' '.join(f'"{name}"@en' for name in chunk_names)
-        
-#         sparql.setQuery(f"""
-#             PREFIX dbo: <http://dbpedia.org/ontology/>
-#             PREFIX dbr: <http://dbpedia.org/resource/>
-#             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-#             PREFIX dct: <http://purl.org/dc/terms/>
-#             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-
-#             SELECT DISTINCT ?entity (SAMPLE(?n) as ?name) (SAMPLE(?c) as ?comment) ?type
-#             WHERE {{
-#                 VALUES ?searchLabel {{ {values_string} }}
-#                 ?entity rdfs:label ?searchLabel ;
-#                         rdfs:label ?n ;
-#                         rdfs:comment ?c .
-                
-#                 ?entity rdf:type ?typeClass .
-#                 ?typeClass rdfs:label ?type .
-#                 FILTER(lang(?type) = "en")
-
-#                 ?entity dct:subject/skos:broader* <http://dbpedia.org/resource/Category:Oncology>
-
-#                 OPTIONAL {{ 
-#                     ?entity rdfs:label ?name .
-#                     FILTER(lang(?n) = "es")
-#                 }}
-                
-#                 OPTIONAL {{ 
-#                     ?entity rdfs:comment ?c .
-#                     FILTER(lang(?c) = "es")
-#                 }}
-#             }}
-#             """)
-        
-#         result = sparql.query().convert()["results"]["bindings"]
-#         print("Result: ", values_string)
-#         if len(result) > 0:
-#             results.append(result[0])
-    
-
-#     return results
-# storeData("tumor")

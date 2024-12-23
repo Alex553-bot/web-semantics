@@ -8,7 +8,7 @@ from preprocess import preprocess
 import ontology
 import dbpedia
 # Google Translator API
-from googletrans import Translator
+from translator import translate as translate_
 # Structure output format
 from restructure import struct_class
 # CORS web
@@ -19,17 +19,17 @@ def create_app():
     return app
 
 app = create_app()
-translator = Translator()
 CORS(app)
 
 """ API ROUTES """
 @app.route('/searchClass', methods=['GET'])
 def searchClass(): 
-    query = translator.translate(request.args['query'], dest='es').text
+    query=  request.args['query']
+    #query = translate_(request.args['query'], dest='es')
     lang = request.args['lang']
     if query is None: 
         abort(404, f"Class {query} not exists")
-    return jsonify(ontology.getInstancesByClass(query, lang, translator))
+    return jsonify(ontology.getInstancesByClass(query, lang))
 
 @app.route('/search', methods=['GET'])
 def search():
@@ -39,14 +39,14 @@ def search():
     if query is None:
         return jsonify({'error': 'Must have a query'}) # this must redirect the frontend
     
-    result_dbpedia = dbpedia.searchDBPedia(preprocess(translator.translate(query, dest='en').text))
+    result_dbpedia = dbpedia.searchDBPedia(preprocess(translate_(query, dest='en')))
     
-    result = ontology.search(preprocess(translator.translate(query, dest='es').text))
+    result = ontology.search(preprocess(translate_(query, dest='es')))
     
     if len(result_dbpedia) != 0: result['DOID.dbpedia.Disease'] = result_dbpedia
 
     if len(result) == 0:
-        msg = translator.translate('No existen busquedas encontradas', dest=lang).text
+        msg = translate_('No existen busquedas encontradas', dest=lang)
         result[msg] = []
 
     return result
@@ -65,9 +65,8 @@ def translate(result, lang):
         for i in range(len(class_instances)):
             instance = class_instances[i]
             for key in instance.keys():
-                if key=='iri': continue
-                result[class_][i][key] = translator.translate(result[class_][i][key], dest=lang).text
-    
+                if key=='iri' or key=='name_individual' or key=='sample_name': continue
+                result[class_][i][key] = translate_(result[class_][i][key], dest=lang)    
     return result
 
 if __name__ == '__main__' :

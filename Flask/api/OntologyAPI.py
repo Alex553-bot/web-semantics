@@ -24,7 +24,8 @@ CORS(app)
 """ API ROUTES """
 @app.route('/searchClass', methods=['GET'])
 def searchClass(): 
-    query = translate_(request.args['query'], dest='es')
+    query=  request.args['query']
+    #query = translate_(request.args['query'], dest='es')
     lang = request.args['lang']
     if query is None: 
         abort(404, f"Class {query} not exists")
